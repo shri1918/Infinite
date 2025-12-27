@@ -1,0 +1,112 @@
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <!-- About Section -->
+                <div class="footer-about">
+                    <div class="footer-logo">
+                        <img src="logonew.png" alt="ICM Logo">
+                        <div>
+                            <span style="font-size: 28px; font-weight: 800; background: linear-gradient(45deg, #ffd700, #ffed4e); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; text-shadow: 0 2px 4px rgba(0,0,0,0.1); display: block; line-height: 1;">ICM</span>
+                            <span style="font-size: 14px; color: #94a3b8; font-weight: 500; letter-spacing: 1px;">Infinite Capital</span>
+                        </div>
+                    </div>
+                    <p>Your trusted partner for all your financial needs. We provide transparent and hassle-free loan solutions with competitive rates and quick approvals.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" aria-label="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+                <!-- Quick Links Section -->
+                <div class="footer-links">
+                    <h3>
+                        Quick Links
+                        <span></span>
+                    </h3>
+                    <ul>
+                        <li>
+                            <a href="index.html">
+                                <i class="fas fa-chevron-right"></i>
+                                <span>Home</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="personal-loan.html">
+                                <i class="fas fa-chevron-right"></i>
+                                <span>Personal Loan</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="business-loan.html">
+                                <i class="fas fa-chevron-right"></i>
+                                <span>Business Loan</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="home-loan.html">
+                                <i class="fas fa-chevron-right"></i>
+                                <span>Home Loan</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="vehicle-loan.html">
+                                <i class="fas fa-chevron-right"></i>
+                                <span>Vehicle Loan</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Contact Section -->
+                <div class="footer-contact">
+                    <h3>
+                        Contact Us
+                        <span></span>
+                    </h3>
+                    <div>
+                        <i class="fas fa-map-marker-alt"></i>
+                        <p>Lane No.6 Rajput dairy matiala Road Nearest Metro Nawada, New Delhi, Bharat, 110059</p>
+                    </div>
+                    <div>
+                        <i class="fas fa-phone-alt"></i>
+                        <div class="contact-info">
+                            <p>+91 98765 43210</p>
+                            <p>Mon-Sat: 9:00 AM - 7:00 PM</p>
+                        </div>
+                    </div>
+                    <div>
+                        <i class="fas fa-envelope"></i>
+                        <div class="contact-info">
+                            <p>info@infinitecapital.com</p>
+                            <p>We'll respond within 24 hours</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Newsletter Section -->
+             
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Infinite Capital Management. All Rights Reserved.</p>
+                <div class="footer-legal">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Use</a>
+                    <a href="#">Disclaimer</a>
+                </div>
+            </div>
+            <div class="footer-disclaimer">
+                <p>ICM is a registered with all NBFC and bank . All loans at the sole discretion of the lender. Terms and conditions apply.</p>
+            </div>
+        </div>
+    </footer>
+

@@ -1,0 +1,830 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Investment vs Loan: When to Invest and When to Borrow - Infinite Capital Management</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --primary-dark: #1d4ed8;
+            --text-dark: #1e293b;
+            --text-light: #64748b;
+            --light-bg: #f8fafc;
+            --border-radius: 8px;
+            --card-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            --transition: all 0.3s ease;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            color: var(--text-dark);
+            line-height: 1.6;
+            background-color: var(--light-bg);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+        .header {
+            background: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .nav-logo { flex: 0 0 auto; }
+
+        .logo-link {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .logo-link:hover { transform: scale(1.05); }
+        
+        .logo-img {
+            height: 50px;
+            width: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+            transition: all 0.3s ease;
+            margin-right: 12px;
+        }
+        
+        .logo-img:hover {
+            box-shadow: 0 6px 25px rgba(255, 215, 0, 0.5);
+            transform: scale(1.02);
+        }
+        
+        .logo-text {
+            font-size: 1.5rem;
+            font-weight: 800;
+            background: linear-gradient(45deg, #ffd700, #ffed4e);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 2px 4px rgba(255, 215, 0, 0.3);
+            letter-spacing: 1px;
+            margin-left: 8px;
+        }
+
+        .nav-center {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--primary-color);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--primary-color);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover::after, .nav-links a.active::after {
+            width: 100%;
+        }
+
+        .nav-actions { flex: 0 0 auto; }
+
+        .btn {
+            padding: 12px 24px;
+            border-radius: var(--border-radius);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(37, 99, 235, 0.3);
+        }
+
+        .hamburger { display: none; flex-direction: column; cursor: pointer; }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background: var(--text-dark);
+            margin: 3px 0;
+            transition: var(--transition);
+        }
+
+        .main-content { margin-top: 100px; padding: 40px 0; }
+
+        .breadcrumb {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 30px;
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        .breadcrumb a { color: var(--primary-color); text-decoration: none; }
+        .breadcrumb a:hover { text-decoration: underline; }
+
+        .article-header {
+            background: white;
+            border-radius: 16px;
+            padding: 40px;
+            margin-bottom: 40px;
+            box-shadow: var(--card-shadow);
+        }
+
+        .article-meta {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .article-category {
+            background: var(--primary-color);
+            color: white;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        .article-date {
+            color: var(--text-light);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .article-title {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            color: var(--text-dark);
+            line-height: 1.2;
+        }
+
+        .article-excerpt {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        .article-content {
+            background: white;
+            border-radius: 16px;
+            padding: 40px;
+            box-shadow: var(--card-shadow);
+            margin-bottom: 40px;
+        }
+
+        .article-content h2 {
+            color: var(--text-dark);
+            margin-top: 30px;
+            margin-bottom: 15px;
+            font-size: 1.8rem;
+        }
+
+        .article-content h3 {
+            color: var(--text-dark);
+            margin-top: 25px;
+            margin-bottom: 12px;
+            font-size: 1.4rem;
+        }
+
+        .article-content p {
+            margin-bottom: 16px;
+            line-height: 1.7;
+            color: var(--text-dark);
+        }
+
+        .article-content ul, .article-content ol {
+            margin-bottom: 16px;
+            padding-left: 30px;
+        }
+
+        .article-content li {
+            margin-bottom: 8px;
+            line-height: 1.6;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            border-left: 4px solid var(--primary-color);
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .highlight-box h4 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--card-shadow);
+        }
+
+        .comparison-table th,
+        .comparison-table td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .comparison-table th {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+            color: white;
+            font-weight: 600;
+        }
+
+        .comparison-table tr:hover {
+            background-color: var(--light-bg);
+        }
+
+        .scenario-card {
+            background: var(--light-bg);
+            border-radius: 12px;
+            padding: 25px;
+            margin: 20px 0;
+            border-left: 4px solid var(--primary-color);
+            transition: var(--transition);
+        }
+
+        .scenario-card:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--card-shadow);
+        }
+
+        .scenario-card h4 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+
+        .pros-cons {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin: 25px 0;
+        }
+
+        .pros, .cons {
+            background: var(--light-bg);
+            padding: 20px;
+            border-radius: 12px;
+        }
+
+        .pros h4 {
+            color: #10b981;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .cons h4 {
+            color: #ef4444;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pros ul li::marker {
+            content: "✓ ";
+            color: #10b981;
+            font-weight: bold;
+        }
+
+        .cons ul li::marker {
+            content: "✗ ";
+            color: #ef4444;
+            font-weight: bold;
+        }
+
+        .post-navigation {
+            background: white;
+            border-radius: 16px;
+            padding: 30px;
+            box-shadow: var(--card-shadow);
+            margin-bottom: 40px;
+        }
+
+        .nav-posts {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .nav-post {
+            text-decoration: none;
+            padding: 20px;
+            border-radius: 12px;
+            background: var(--light-bg);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .nav-post:hover {
+            background: #e2e8f0;
+            transform: translateY(-2px);
+        }
+
+        .nav-post-label {
+            font-size: 0.8rem;
+            color: var(--text-light);
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .nav-post-title {
+            color: var(--text-dark);
+            font-weight: 600;
+        }
+
+        .nav-post.next { text-align: right; }
+
+        .related-posts {
+            background: white;
+            border-radius: 16px;
+            padding: 40px;
+            box-shadow: var(--card-shadow);
+        }
+
+        .related-posts h3 {
+            margin-bottom: 30px;
+            color: var(--text-dark);
+            font-size: 1.8rem;
+        }
+
+        .related-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .related-card {
+            background: var(--light-bg);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: var(--transition);
+            text-decoration: none;
+        }
+
+        .related-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .related-card img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+        }
+
+        .related-card-content { padding: 20px; }
+
+        .related-card h4 {
+            color: var(--text-dark);
+            margin-bottom: 8px;
+            font-size: 1.1rem;
+        }
+
+        .related-card p {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        @media (max-width: 768px) {
+            .nav-center { display: none; }
+            .nav-actions { display: none; }
+            .hamburger { display: flex; }
+            .article-title { font-size: 2rem; }
+            .article-header { padding: 25px; }
+            .article-content { padding: 25px; }
+            .nav-posts { grid-template-columns: 1fr; gap: 20px; }
+            .nav-post.next { text-align: left; }
+            .related-grid { grid-template-columns: 1fr; }
+            .pros-cons { grid-template-columns: 1fr; }
+            .comparison-table { font-size: 0.9rem; }
+            .comparison-table th, .comparison-table td { padding: 10px; }
+        }
+
+        .footer {
+            background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+            color: white;
+            padding: 60px 0 30px;
+            margin-top: 80px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-section h3 { margin-bottom: 20px; color: #ffd700; }
+        .footer-section ul { list-style: none; }
+        .footer-section ul li { margin-bottom: 10px; }
+
+        .footer-section ul li a {
+            color: #cbd5e1;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-section ul li a:hover { color: #ffd700; }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid #475569;
+            color: #94a3b8;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <div class="nav-logo">
+                    <a href="../index.html" class="logo-link">
+                        <img src="../images/icm-logo-gold.jpg" alt="Infinite Capital Management" class="logo-img">
+                        <span class="logo-text">ICM</span>
+                    </a>
+                </div>
+                <div class="nav-center">
+                    <ul class="nav-links">
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="../loan-products.html">Loan Products</a></li>
+                        <li><a href="../free-credit-score.html">Free Credit Score</a></li>
+                        <li><a href="../blog.html" class="active">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="nav-actions">
+                    <a href="../personal-loan-application.html" class="btn btn-primary">Apply for personal loan</a>
+                </div>
+                <div class="hamburger"><span></span><span></span><span></span></div>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="container">
+            <nav class="breadcrumb">
+                <a href="../index.html">Home</a>
+                <span>/</span>
+                <a href="../blog.html">Blog</a>
+                <span>/</span>
+                <span>Investment vs Loan: When to Invest and When to Borrow</span>
+            </nav>
+
+            <article class="article-header">
+                <div class="article-meta">
+                    <span class="article-category">Investment Tips</span>
+                    <span class="article-date">
+                        <i class="far fa-calendar"></i>
+                        March 8, 2024
+                    </span>
+                </div>
+                <h1 class="article-title">Investment vs Loan: When to Invest and When to Borrow</h1>
+                <p class="article-excerpt">Making smart financial decisions between investing your money or taking a loan for major purchases. Learn when to invest, when to borrow, and how to optimize your financial strategy.</p>
+            </article>
+
+            <div class="article-content">
+                <p>One of the most common financial dilemmas people face is whether to use their savings for a major purchase or investment, or to take a loan instead. Both options have their merits and drawbacks, and the right choice depends on various factors including interest rates, opportunity costs, risk tolerance, and financial goals.</p>
+
+                <h2>Understanding the Basic Concepts</h2>
+
+                <h3>What is Opportunity Cost?</h3>
+                <p>Opportunity cost is the potential benefit you miss out on when choosing one alternative over another. In the context of investing vs borrowing, it's the return you could have earned by investing your money instead of using it for a purchase.</p>
+
+                <div class="highlight-box">
+                    <h4>Key Formula to Remember</h4>
+                    <p>If your expected investment returns are higher than the loan interest rate, it generally makes sense to borrow and invest. If the loan interest rate is higher than expected returns, use your savings.</p>
+                </div>
+
+                <h2>Comparison: Investing vs Taking a Loan</h2>
+
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Factor</th>
+                            <th>Using Savings</th>
+                            <th>Taking a Loan</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Interest Cost</strong></td>
+                            <td>No interest payments</td>
+                            <td>Interest payments required</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Liquidity</strong></td>
+                            <td>Reduces available cash</td>
+                            <td>Preserves cash reserves</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Investment Opportunity</strong></td>
+                            <td>Foregoes potential returns</td>
+                            <td>Allows continued investing</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Risk</strong></td>
+                            <td>No additional debt risk</td>
+                            <td>Debt obligation regardless of income</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Credit Impact</strong></td>
+                            <td>No impact on credit score</td>
+                            <td>Can improve credit with timely payments</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Tax Benefits</strong></td>
+                            <td>No tax advantages</td>
+                            <td>Possible tax deductions (home loans, etc.)</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h2>When to Choose Investing Over Borrowing</h2>
+
+                <div class="scenario-card">
+                    <h4>Scenario 1: High-Return Investment Opportunities</h4>
+                    <p>If you have access to investments that consistently generate returns higher than loan interest rates, it makes sense to borrow. For example, if you can get a home loan at 8% interest but your investment portfolio averages 12% returns, borrowing could be beneficial.</p>
+                </div>
+
+                <div class="scenario-card">
+                    <h4>Scenario 2: Tax-Advantaged Loans</h4>
+                    <p>Home loans and education loans often come with tax benefits that effectively reduce the interest cost. A home loan at 8% interest with tax benefits might have an effective rate of 6%, making it cheaper than using your savings.</p>
+                </div>
+
+                <div class="scenario-card">
+                    <h4>Scenario 3: Maintaining Emergency Fund</h4>
+                    <p>If using your savings would deplete your emergency fund, taking a loan helps maintain financial security. An emergency fund should cover 6-12 months of expenses and shouldn't be used for planned purchases.</p>
+                </div>
+
+                <h2>When to Use Your Savings Instead</h2>
+
+                <div class="scenario-card">
+                    <h4>Scenario 1: High Interest Rates</h4>
+                    <p>When loan interest rates are higher than potential investment returns, using savings is usually better. Credit card interest rates (18-36% annually) almost always exceed investment returns, making it wise to avoid such debt.</p>
+                </div>
+
+                <div class="scenario-card">
+                    <h4>Scenario 2: Unstable Income</h4>
+                    <p>If your income is irregular or uncertain, taking on debt obligations can be risky. Using savings eliminates the stress of monthly EMI payments and provides more financial flexibility.</p>
+                </div>
+
+                <div class="scenario-card">
+                    <h4>Scenario 3: Peace of Mind</h4>
+                    <p>Some people prefer being debt-free regardless of potential financial benefits. The psychological comfort of owning assets outright can be valuable and shouldn't be underestimated.</p>
+                </div>
+
+                <h2>Pros and Cons Analysis</h2>
+
+                <div class="pros-cons">
+                    <div class="pros">
+                        <h4><i class="fas fa-check-circle"></i>Pros of Taking a Loan</h4>
+                        <ul>
+                            <li>Preserves liquidity and cash flow</li>
+                            <li>Allows continued investment opportunities</li>
+                            <li>Potential tax benefits (home loans, education loans)</li>
+                            <li>Builds credit history with timely payments</li>
+                            <li>Leverage can amplify returns</li>
+                            <li>Inflation reduces real debt burden over time</li>
+                        </ul>
+                    </div>
+                    <div class="cons">
+                        <h4><i class="fas fa-times-circle"></i>Cons of Taking a Loan</h4>
+                        <ul>
+                            <li>Interest payments increase total cost</li>
+                            <li>Monthly EMI obligations regardless of income</li>
+                            <li>Risk of default and credit damage</li>
+                            <li>Investment returns are not guaranteed</li>
+                            <li>Stress of debt obligations</li>
+                            <li>Collateral risk in secured loans</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h2>Real-World Examples</h2>
+
+                <h3>Example 1: Home Purchase</h3>
+                <p><strong>Situation:</strong> You have ₹20 lakhs saved and want to buy a ₹50 lakh home.</p>
+                <p><strong>Option A:</strong> Use ₹20 lakhs as down payment, take ₹30 lakh loan at 8% interest.</p>
+                <p><strong>Option B:</strong> Use all ₹20 lakhs, take ₹30 lakh loan at higher interest due to lower down payment.</p>
+                <p><strong>Analysis:</strong> Option A is typically better as it results in lower EMIs, better loan terms, and preserves some liquidity.</p>
+
+                <h3>Example 2: Car Purchase</h3>
+                <p><strong>Situation:</strong> You have ₹8 lakhs and want to buy a ₹8 lakh car.</p>
+                <p><strong>Option A:</strong> Pay cash and buy the car outright.</p>
+                <p><strong>Option B:</strong> Take a car loan at 9% and invest the ₹8 lakhs in mutual funds expecting 12% returns.</p>
+                <p><strong>Analysis:</strong> Option B could be better if you can consistently achieve higher returns than the loan interest rate.</p>
+
+                <div class="highlight-box">
+                    <h4>Decision Framework</h4>
+                    <p>Use this simple framework: If (Expected Investment Return - Tax on Gains) > (Loan Interest Rate - Tax Benefits), then consider borrowing. Always factor in your risk tolerance and financial stability.</p>
+                </div>
+
+                <h2>Factors to Consider</h2>
+
+                <h3>Interest Rate Environment</h3>
+                <ul>
+                    <li>In low interest rate environments, borrowing becomes more attractive</li>
+                    <li>In high interest rate periods, using savings might be better</li>
+                    <li>Consider both fixed and floating rate options</li>
+                </ul>
+
+                <h3>Investment Horizon</h3>
+                <ul>
+                    <li>Long-term investments can potentially overcome short-term volatility</li>
+                    <li>Match your investment horizon with loan tenure</li>
+                    <li>Consider market cycles and timing</li>
+                </ul>
+
+                <h3>Risk Assessment</h3>
+                <ul>
+                    <li>Evaluate your risk tolerance honestly</li>
+                    <li>Consider job security and income stability</li>
+                    <li>Assess market volatility and investment risks</li>
+                    <li>Factor in your age and financial goals</li>
+                </ul>
+
+                <h2>Common Mistakes to Avoid</h2>
+
+                <ul>
+                    <li><strong>Ignoring taxes:</strong> Don't forget to factor in taxes on investment gains and loan tax benefits</li>
+                    <li><strong>Overconfidence in returns:</strong> Don't assume past returns guarantee future performance</li>
+                    <li><strong>Neglecting emergency funds:</strong> Never compromise your emergency fund for investments</li>
+                    <li><strong>Emotional decisions:</strong> Don't let fear or greed drive your decision</li>
+                    <li><strong>Ignoring total cost:</strong> Consider all fees, processing charges, and hidden costs</li>
+                </ul>
+
+                <h2>Best Practices</h2>
+
+                <ol>
+                    <li><strong>Maintain Emergency Fund:</strong> Always keep 6-12 months of expenses in liquid savings</li>
+                    <li><strong>Diversify Investments:</strong> Don't put all money in one investment type</li>
+                    <li><strong>Review Regularly:</strong> Reassess your strategy as interest rates and market conditions change</li>
+                    <li><strong>Consider Professional Advice:</strong> Consult financial advisors for complex decisions</li>
+                    <li><strong>Start Small:</strong> Test your investment strategy with smaller amounts first</li>
+                </ol>
+
+                <h2>Conclusion</h2>
+                <p>The decision between investing and taking a loan isn't always black and white. It depends on multiple factors including interest rates, your risk tolerance, investment opportunities, and personal financial situation. The key is to make an informed decision based on careful analysis rather than emotion.</p>
+
+                <p>Remember that financial strategies should align with your overall goals and comfort level. What works for one person may not work for another, so it's important to evaluate your unique circumstances and consult with financial professionals when needed.</p>
+
+                <p>At Infinite Capital Management, we help clients navigate these complex financial decisions. Our advisors can help you analyze your specific situation, compare loan options, and develop investment strategies that align with your goals and risk tolerance.</p>
+            </div>
+
+            <nav class="post-navigation">
+                <div class="nav-posts">
+                    <a href="business-loan-requirements.html" class="nav-post prev">
+                        <span class="nav-post-label">← Previous</span>
+                        <span class="nav-post-title">Small Business Loan Requirements: What You Need to Know</span>
+                    </a>
+                    <a href="budget-planning-guide.html" class="nav-post next">
+                        <span class="nav-post-label">Next →</span>
+                        <span class="nav-post-title">Creating a Budget That Actually Works: A Step-by-Step Guide</span>
+                    </a>
+                </div>
+            </nav>
+
+            <section class="related-posts">
+                <h3>Related Articles</h3>
+                <div class="related-grid">
+                    <a href="complete-guide-personal-loans-2024.html" class="related-card">
+                        <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Personal loans guide">
+                        <div class="related-card-content">
+                            <h4>Complete Guide to Personal Loans in 2024</h4>
+                            <p>Everything you need to know about personal loans, from eligibility criteria to application process.</p>
+                        </div>
+                    </a>
+                    <a href="credit-score-improvement-guide.html" class="related-card">
+                        <img src="https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Credit score guide">
+                        <div class="related-card-content">
+                            <h4>How to Improve Your Credit Score in 90 Days</h4>
+                            <p>A comprehensive guide to boosting your credit score quickly and effectively.</p>
+                        </div>
+                    </a>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Infinite Capital Management</h3>
+                    <p>Your trusted partner for all financial needs. We provide comprehensive loan solutions with competitive rates and quick processing.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="../loan-products.html">Loan Products</a></li>
+                        <li><a href="../free-credit-score.html">Free Credit Score</a></li>
+                        <li><a href="../blog.html">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Loan Products</h3>
+                    <ul>
+                        <li><a href="../personal-loan-application.html">Personal Loan</a></li>
+                        <li><a href="../home-loan-new.html">Home Loan</a></li>
+                        <li><a href="../business-loan.html">Business Loan</a></li>
+                        <li><a href="../education-loan.html">Education Loan</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <ul>
+                        <li><i class="fas fa-phone"></i> +91 98765 43210</li>
+                        <li><i class="fas fa-envelope"></i> info@infinitecapital.com</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Mumbai, India</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Infinite Capital Management. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.querySelector('.hamburger').addEventListener('click', function() {
+            document.querySelector('.nav-center').classList.toggle('active');
+        });
+    </script>
+</body>
+</html>
+
+

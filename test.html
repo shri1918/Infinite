@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ICM - Test Integration</title>
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body>
+    <div class="container" style="padding: 2rem; max-width: 800px; margin: 2rem auto;">
+        <h1 style="text-align: center; color: var(--primary-color);">Website Integration Test</h1>
+        
+        <div style="text-align: center; margin: 2rem 0;">
+            <p>If you can see this styled properly with the blue color and proper fonts, the CSS is working!</p>
+            
+            <button class="btn btn-primary" style="margin: 1rem;">Primary Button</button>
+            <button class="btn btn-secondary">Secondary Button</button>
+        </div>
+        
+        <div style="background: var(--bg-light); padding: 1rem; border-radius: var(--border-radius); margin: 1rem 0;">
+            <h3>Test Features:</h3>
+            <ul style="list-style: disc; margin-left: 2rem;">
+                <li>✅ CSS Variables working</li>
+                <li>✅ Button styles applied</li>
+                <li>✅ Typography loaded</li>
+                <li>✅ Layout components ready</li>
+            </ul>
+        </div>
+    </div>
+    
+    <script src="assets/js/main.js"></script>
+    <script>
+        // Test JavaScript
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('Test page loaded successfully!');
+            
+            // Test button clicks
+            document.querySelectorAll('.btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    alert('Button click working! Integration successful!');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
+
+

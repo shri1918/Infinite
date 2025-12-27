@@ -1,0 +1,31 @@
+/* Standardized Blue Color Scheme for All Pages */
+:root {
+    /* Primary Blue Colors - Standardized */
+    --blue-primary: #2563eb;        /* Main blue - use for primary elements, buttons, links */
+    --blue-accent: #3b82f6;         /* Accent blue - use for gradients, highlights */
+    --blue-light: #60a5fa;          /* Light blue - use for hover states, secondary links */
+    --blue-dark: #1d4ed8;           /* Dark blue - use for darker variants, pressed states */
+    
+    /* Legacy support - map to standard colors */
+    --primary-color: #2563eb;
+    --primary-dark: #1d4ed8;
+    --accent-color: #3b82f6;
+}
+
+/* Standard Blue Gradients */
+.blue-gradient-primary {
+    background: linear-gradient(135deg, #2563eb 0%, #3b82f6 100%);
+}
+
+.blue-gradient-accent {
+    background: linear-gradient(135deg, #3b82f6, #60a5fa);
+}
+
+.blue-gradient-button {
+    background: linear-gradient(45deg, #2563eb, #3b82f6);
+}
+
+.blue-gradient-button-hover {
+    background: linear-gradient(45deg, #1d4ed8, #2563eb);
+}
+

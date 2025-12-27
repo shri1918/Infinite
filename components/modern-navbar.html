@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infinite Capital Management - Premium Financial Services</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-gold: #D4AF37;
+            --dark-gold: #B8860B;
+            --light-gold: #F7DC6F;
+            --premium-black: #1a1a1a;
+            --soft-black: #2c2c2c;
+            --white: #ffffff;
+            --light-gray: #f8f9fa;
+            --medium-gray: #6c757d;
+            --shadow-gold: rgba(212, 175, 55, 0.3);
+            --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            min-height: 100vh;
+        }
+
+        /* Premium Navigation Bar */
+        .premium-navbar {
+            background: linear-gradient(135deg, var(--white) 0%, rgba(255, 255, 255, 0.98) 100%);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12), 0 2px 16px rgba(212, 175, 55, 0.1);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+            transition: var(--transition);
+        }
+
+        .navbar-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 2rem;
+            height: 90px;
+        }
+
+        /* Premium Logo Section */
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            text-decoration: none;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .logo-section:hover {
+            transform: translateY(-2px);
+        }
+
+        .logo-container {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(145deg, var(--primary-gold), var(--dark-gold));
+            border-radius: 50%;
+            box-shadow: 
+                0 8px 25px var(--shadow-gold),
+                inset 0 2px 4px rgba(255, 255, 255, 0.3),
+                inset 0 -2px 4px rgba(0, 0, 0, 0.1);
+            transition: var(--transition);
+            overflow: hidden;
+        }
+
+        .logo-container::before {
+            content: '';
+            position: absolute;
+            top: 2px;
+            left: 2px;
+            right: 2px;
+            bottom: 2px;
+            border-radius: 50%;
+            background: linear-gradient(145deg, rgba(255, 255, 255, 0.2), transparent);
+            pointer-events: none;
+        }
+
+        .logo-container:hover {
+            transform: rotate(5deg) scale(1.05);
+            box-shadow: 
+                0 12px 35px var(--shadow-gold),
+                inset 0 2px 6px rgba(255, 255, 255, 0.4),
+                inset 0 -2px 6px rgba(0, 0, 0, 0.15);
+        }
+
+        .logo-image {
+            width: 65px;
+            height: 65px;
+            object-fit: cover;
+            border-radius: 50%;
+            filter: brightness(1.1) contrast(1.1);
+            transition: var(--transition);
+        }
+
+        .brand-text {
+            display: flex;
+            flex-direction: column;
+            gap: 0.2rem;
+        }
+
+        .brand-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--premium-black);
+            letter-spacing: -0.5px;
+            line-height: 1.2;
+            background: linear-gradient(135deg, var(--premium-black), var(--soft-black));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .brand-subtitle {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--primary-gold);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            text-shadow: 0 1px 2px rgba(212, 175, 55, 0.3);
+        }
+
+        /* Navigation Menu */
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+            align-items: center;
+        }
+
+        .nav-item {
+            position: relative;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: var(--premium-black);
+            font-weight: 500;
+            font-size: 1rem;
+            padding: 1rem 0;
+            position: relative;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .nav-link:hover {
+            color: var(--primary-gold);
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary-gold), var(--dark-gold));
+            border-radius: 2px;
+            transition: var(--transition);
+        }
+
+        .nav-link:hover::after,
+        .nav-link.active::after {
+            width: 100%;
+        }
+
+        /* Dropdown Menu */
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-content {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: var(--white);
+            min-width: 320px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15), 0 5px 15px rgba(212, 175, 55, 0.1);
+            border-radius: 12px;
+            padding: 1rem 0;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-15px);
+            transition: var(--transition);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        .dropdown:hover .dropdown-content {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .dropdown-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem 1.5rem;
+            color: var(--premium-black);
+            text-decoration: none;
+            transition: var(--transition);
+            border-left: 3px solid transparent;
+        }
+
+        .dropdown-item:hover {
+            background: linear-gradient(90deg, rgba(212, 175, 55, 0.1), rgba(212, 175, 55, 0.05));
+            border-left-color: var(--primary-gold);
+            transform: translateX(5px);
+        }
+
+        .dropdown-icon {
+            width: 35px;
+            height: 35px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--primary-gold), var(--dark-gold));
+            color: white;
+            border-radius: 8px;
+            font-size: 1rem;
+            flex-shrink: 0;
+            box-shadow: 0 4px 12px var(--shadow-gold);
+        }
+
+        .dropdown-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .dropdown-title {
+            font-weight: 600;
+            font-size: 1rem;
+            margin-bottom: 0.2rem;
+            color: var(--premium-black);
+        }
+
+        .dropdown-desc {
+            font-size: 0.85rem;
+            color: var(--medium-gray);
+        }
+
+        /* Action Buttons */
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .btn-premium {
+            background: linear-gradient(135deg, var(--primary-gold), var(--dark-gold));
+            color: var(--white);
+            padding: 0.8rem 2rem;
+            border: none;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: var(--transition);
+            box-shadow: 0 6px 20px var(--shadow-gold);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .btn-premium:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px var(--shadow-gold);
+            background: linear-gradient(135deg, var(--dark-gold), var(--primary-gold));
+        }
+
+        .btn-outline {
+            border: 2px solid var(--primary-gold);
+            color: var(--primary-gold);
+            background: transparent;
+            padding: 0.7rem 1.5rem;
+            border-radius: 30px;
+            font-weight: 500;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .btn-outline:hover {
+            background: var(--primary-gold);
+            color: var(--white);
+            transform: translateY(-2px);
+        }
+
+        /* Mobile Menu Toggle */
+        .mobile-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            padding: 0.5rem;
+            gap: 4px;
+        }
+
+        .mobile-toggle span {
+            width: 25px;
+            height: 3px;
+            background: var(--primary-gold);
+            transition: var(--transition);
+            border-radius: 2px;
+        }
+
+        /* Demo Content */
+        .demo-content {
+            margin-top: 120px;
+            padding: 4rem 2rem;
+            text-align: center;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .demo-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            color: var(--premium-black);
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--premium-black), var(--primary-gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .demo-subtitle {
+            font-size: 1.25rem;
+            color: var(--medium-gray);
+            margin-bottom: 3rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .navbar-container {
+                padding: 0 1.5rem;
+            }
+            
+            .nav-menu {
+                gap: 2rem;
+            }
+            
+            .brand-name {
+                font-size: 1.3rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .mobile-toggle {
+                display: flex;
+            }
+            
+            .nav-menu {
+                position: fixed;
+                top: 90px;
+                left: -100%;
+                width: 80%;
+                height: calc(100vh - 90px);
+                background: var(--white);
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: center;
+                padding-top: 2rem;
+                transition: var(--transition);
+                box-shadow: 2px 0 20px rgba(0, 0, 0, 0.15);
+            }
+            
+            .nav-menu.active {
+                left: 0;
+            }
+            
+            .nav-actions {
+                gap: 0.5rem;
+            }
+            
+            .btn-premium {
+                padding: 0.6rem 1.2rem;
+                font-size: 0.85rem;
+            }
+            
+            .logo-container {
+                width: 55px;
+                height: 55px;
+            }
+            
+            .logo-image {
+                width: 50px;
+                height: 50px;
+            }
+            
+            .brand-name {
+                font-size: 1.1rem;
+            }
+            
+            .brand-subtitle {
+                font-size: 0.8rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .navbar-container {
+                height: 75px;
+                padding: 0 1rem;
+            }
+            
+            .logo-container {
+                width: 45px;
+                height: 45px;
+            }
+            
+            .logo-image {
+                width: 40px;
+                height: 40px;
+            }
+            
+            .brand-name {
+                font-size: 1rem;
+            }
+            
+            .brand-subtitle {
+                font-size: 0.75rem;
+            }
+            
+            .btn-premium {
+                padding: 0.5rem 1rem;
+                font-size: 0.8rem;
+            }
+            
+            .demo-content {
+                margin-top: 95px;
+                padding: 2rem 1rem;
+            }
+            
+            .demo-title {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Premium Navigation Bar -->
+    <nav class="premium-navbar">
+        <div class="navbar-container">
+            <!-- Logo Section -->
+            <a href="#" class="logo-section">
+                <div class="logo-container">
+                    <img src="../images/icm-logo-golden-lion.jpg" alt="Infinite Capital Management" class="logo-image">
+                </div>
+                <div class="brand-text">
+                    <div class="brand-name">Infinite Capital Management</div>
+                    <div class="brand-subtitle">ICM</div>
+                </div>
+            </a>
+
+            <!-- Navigation Menu -->
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="#" class="nav-link active">
+                        <i class="fas fa-home"></i> Home
+                    </a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link">
+                        <i class="fas fa-coins"></i> Loan Products <i class="fas fa-chevron-down"></i>
+                    </a>
+                    <div class="dropdown-content">
+                        <a href="#" class="dropdown-item">
+                            <div class="dropdown-icon">
+                                <i class="fas fa-wallet"></i>
+                            </div>
+                            <div class="dropdown-text">
+                                <div class="dropdown-title">Personal Loan</div>
+                                <div class="dropdown-desc">Up to ₹50 Lakhs</div>
+                            </div>
+                        </a>
+                        <a href="#" class="dropdown-item">
+                            <div class="dropdown-icon">
+                                <i class="fas fa-home"></i>
+                            </div>
+                            <div class="dropdown-text">
+                                <div class="dropdown-title">Home Loan</div>
+                                <div class="dropdown-desc">Up to ₹5 Crores</div>
+                            </div>
+                        </a>
+                        <a href="#" class="dropdown-item">
+                            <div class="dropdown-icon">
+                                <i class="fas fa-briefcase"></i>
+                            </div>
+                            <div class="dropdown-text">
+                                <div class="dropdown-title">Business Loan</div>
+                                <div class="dropdown-desc">Up to ₹2 Crores</div>
+                            </div>
+                        </a>
+                        <a href="#" class="dropdown-item">
+                            <div class="dropdown-icon">
+                                <i class="fas fa-car"></i>
+                            </div>
+                            <div class="dropdown-text">
+                                <div class="dropdown-title">Vehicle Loan</div>
+                                <div class="dropdown-desc">Cars & Two Wheelers</div>
+                            </div>
+                        </a>
+                        <a href="#" class="dropdown-item">
+                            <div class="dropdown-icon">
+                                <i class="fas fa-graduation-cap"></i>
+                            </div>
+                            <div class="dropdown-text">
+                                <div class="dropdown-title">Education Loan</div>
+                                <div class="dropdown-desc">Study in India & Abroad</div>
+                            </div>
+                        </a>
+                        <!-- <a href="#" class="dropdown-item">
+                            <div class="dropdown-icon">
+                                <i class="fas fa-coins"></i>
+                            </div>
+                            <div class="dropdown-text">
+                                <div class="dropdown-title">Gold Loan</div>
+                                <div class="dropdown-desc">Instant Approval</div>
+                            </div>
+                        </a> -->
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="fas fa-chart-line"></i> Credit Score
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="fas fa-blog"></i> Blog
+                    </a>
+                </li>
+            </ul>
+
+            <!-- Action Buttons -->
+            <div class="nav-actions">
+                <a href="#" class="btn-outline">Login</a>
+                <a href="#" class="btn-premium">
+                    <i class="fas fa-paper-plane"></i> Apply Now
+                </a>
+            </div>
+
+            <!-- Mobile Toggle -->
+            <div class="mobile-toggle" onclick="toggleMobileMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Demo Content -->
+    <div class="demo-content">
+        <h1 class="demo-title">Premium Navigation Experience</h1>
+        <p class="demo-subtitle">Modern, elegant navbar showcasing the majestic Golden Lion logo for Infinite Capital Management</p>
+        
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 3rem;">
+            <div style="background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 8px 25px rgba(0,0,0,0.1);">
+                <h3 style="color: #D4AF37; margin-bottom: 1rem;">✨ Premium Design</h3>
+                <p style="color: #6c757d;">Golden lion logo with elegant typography and smooth animations</p>
+            </div>
+            <div style="background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 8px 25px rgba(0,0,0,0.1);">
+                <h3 style="color: #D4AF37; margin-bottom: 1rem;">📱 Mobile Responsive</h3>
+                <p style="color: #6c757d;">Perfect display across all devices with optimized sizing</p>
+            </div>
+            <div style="background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 8px 25px rgba(0,0,0,0.1);">
+                <h3 style="color: #D4AF37; margin-bottom: 1rem;">🎯 Interactive Elements</h3>
+                <p style="color: #6c757d;">Hover effects, smooth transitions, and intuitive dropdown menus</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleMobileMenu() {
+            const navMenu = document.querySelector('.nav-menu');
+            const mobileToggle = document.querySelector('.mobile-toggle');
+            
+            navMenu.classList.toggle('active');
+            mobileToggle.classList.toggle('active');
+        }
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const navMenu = document.querySelector('.nav-menu');
+            const mobileToggle = document.querySelector('.mobile-toggle');
+            const navbar = document.querySelector('.premium-navbar');
+            
+            if (!navbar.contains(event.target) && navMenu.classList.contains('active')) {
+                navMenu.classList.remove('active');
+                mobileToggle.classList.remove('active');
+            }
+        });
+
+        // Add scroll effect to navbar
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.premium-navbar');
+            if (window.scrollY > 100) {
+                navbar.style.background = 'rgba(255, 255, 255, 0.95)';
+                navbar.style.backdropFilter = 'blur(25px)';
+            } else {
+                navbar.style.background = 'linear-gradient(135deg, #ffffff 0%, rgba(255, 255, 255, 0.98) 100%)';
+                navbar.style.backdropFilter = 'blur(20px)';
+            }
+        });
+    </script>
+</body>
+</html>
+
+

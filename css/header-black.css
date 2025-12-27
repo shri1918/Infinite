@@ -1,0 +1,51 @@
+/* Header Black Background with White Text - Shared Styles */
+.header {
+    background-color: #000000 !important;
+    /* box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3); */
+}
+
+.navbar {
+    background-color: #000000;
+}
+
+.nav-links a {
+    color: #ffffff !important;
+}
+
+.nav-links a:hover {
+    color: #60a5fa !important;
+}
+
+.nav-links a.active {
+    color: #60a5fa !important;
+}
+
+.dropdown-toggle {
+    color: #ffffff !important;
+}
+
+.dropdown-toggle i {
+    color: #ffffff !important;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #3b82f6, #60a5fa) !important;
+    color: #ffffff !important;
+    border: none;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, #2563eb, #3b82f6) !important;
+    color: #ffffff !important;
+}
+
+.hamburger span {
+    background-color: #ffffff !important;
+}
+
+.logo-img {
+    filter: brightness(1.1);
+    height: 70px !important;
+    width: auto !important;
+}
+

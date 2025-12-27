@@ -1,0 +1,1277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Partner with Us - Infinite Capital Management</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="assets/css/main.css">
+    <!-- Header Black CSS -->
+    <link rel="stylesheet" href="css/header-black.css">
+    <!-- Footer CSS -->
+    <link rel="stylesheet" href="css/footer.css">
+    <!-- Standardized Blue Colors -->
+    <link rel="stylesheet" href="css/blue-colors.css">
+    <!-- Mobile Menu CSS -->
+    <link rel="stylesheet" href="css/mobile-menu.css">
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --primary-dark: #1d4ed8;
+            --text-dark: #1e293b;
+            --text-light: #64748b;
+            --light-bg: #f8fafc;
+            --border-radius: 8px;
+            --card-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            color: var(--text-dark);
+            line-height: 1.6;
+            background-color: var(--light-bg);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles */
+        .header {
+            background: #000000 !important;
+            /* box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3); */
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            /* padding: 15px 0; */
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo-link {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .logo-link:hover {
+            transform: scale(1.05);
+        }
+        
+        .logo-img {
+            height: 50px;
+            width: auto;
+            border-radius: 8px;
+            /* box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3); */
+            transition: all 0.3s ease;
+            margin-right: 12px;
+        }
+        
+        .logo-img:hover {
+            /* box-shadow: 0 6px 25px rgba(255, 215, 0, 0.5); */
+            transform: scale(1.02);
+        }
+        
+        .logo-text {
+            font-size: 1.5rem;
+            font-weight: 800;
+            background: linear-gradient(45deg, #ffd700, #ffed4e);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 2px 4px rgba(255, 215, 0, 0.3);
+            letter-spacing: 1px;
+            margin-left: 8px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #ffffff !important;
+            font-weight: 500;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: #60a5fa !important;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--primary-color);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover::after, .nav-links a.active::after {
+            width: 100%;
+        }
+
+        /* Navigation Dropdown Styles */
+        .nav-dropdown {
+            position: relative;
+        }
+        
+        .dropdown-toggle {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s ease;
+        }
+        
+        .dropdown-toggle i {
+            font-size: 0.8rem;
+            transition: transform 0.3s ease;
+        }
+        
+        .nav-dropdown:hover .dropdown-toggle i {
+            transform: rotate(180deg);
+        }
+        
+        .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: white;
+            min-width: 320px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+            border-radius: 12px;
+            padding: 1rem 0;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
+            z-index: 1000;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+        }
+        
+        .nav-dropdown:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+        
+        .dropdown-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 0.75rem 1.5rem;
+            color: #333;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border-left: 3px solid transparent;
+        }
+        
+        .dropdown-item:hover {
+            background: linear-gradient(135deg, #f8f9ff 0%, #e8f0ff 100%);
+            border-left-color: #007bff;
+            transform: translateX(3px);
+        }
+        
+        .dropdown-item.active {
+            background: linear-gradient(135deg, #2563eb 0%, #3b82f6 100%);
+            color: white;
+            border-left-color: #ffd700;
+        }
+        
+        .dropdown-item i {
+            width: 24px;
+            height: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #007bff, #0056b3);
+            color: white;
+            border-radius: 50%;
+            font-size: 0.9rem;
+            flex-shrink: 0;
+        }
+        
+        .dropdown-item.active i {
+            background: linear-gradient(135deg, #ffd700, #ffed4e);
+            color: #1a202c;
+        }
+        
+        .dropdown-item div {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        
+        .dropdown-item strong {
+            font-weight: 600;
+            font-size: 0.95rem;
+            color: #333;
+            margin-bottom: 0.1rem;
+        }
+        
+        .dropdown-item.active strong {
+            color: white;
+        }
+        
+        .dropdown-item span {
+            font-size: 0.8rem;
+            color: #666;
+            font-weight: 400;
+        }
+        
+        .dropdown-item.active span {
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 24px;
+            border-radius: 6px;
+            font-weight: 600;
+            text-align: center;
+            cursor: pointer;
+            transition: var(--transition);
+            text-decoration: none;
+            border: none;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+        }
+
+        .btn-outline:hover {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        /* Hero Carousel Section */
+        .hero-carousel {
+            position: relative;
+            height: 100vh;
+            min-height: 600px;
+            margin-top: 70px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .carousel-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+        }
+
+        .carousel-slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 0.8s ease-in-out;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .carousel-slide.active {
+            opacity: 1;
+        }
+
+        .carousel-slide img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 1;
+        }
+
+        .carousel-slide::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.3);
+            z-index: 2;
+        }
+
+        .carousel-caption {
+            position: relative;
+            z-index: 3;
+            text-align: center;
+            color: white;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .carousel-caption h2 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+            text-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .carousel-caption p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            opacity: 0.95;
+            line-height: 1.6;
+            animation: fadeInUp 1s ease-out 0.2s both;
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 4rem;
+            margin: 3rem 0;
+            animation: fadeInUp 1s ease-out 0.4s both;
+        }
+
+        .hero-stat {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1.5rem;
+            border-radius: 12px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .hero-stat:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .hero-stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            display: block;
+            margin-bottom: 0.5rem;
+            color: white;
+        }
+
+        .hero-stat-text {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+
+        .carousel-nav {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 1rem;
+            z-index: 3;
+        }
+
+        .carousel-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .carousel-dot.active {
+            background: white;
+            transform: scale(1.2);
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Main Content */
+        .main-content {
+            padding: 4rem 0;
+        }
+
+        .section {
+            margin-bottom: 4rem;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--text-dark);
+        }
+
+        .section-subtitle {
+            font-size: 1.1rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--text-light);
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Features Grid */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 16px;
+            text-align: center;
+            box-shadow: var(--card-shadow);
+            transition: var(--transition);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 1.5rem;
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2rem;
+        }
+
+        .feature-card h3 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+
+        .feature-card p {
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        /* Partnership Benefits */
+        .benefits-section {
+            background: white;
+            padding: 4rem 0;
+            border-radius: 20px;
+            margin: 3rem 0;
+        }
+
+        .benefits-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .benefit-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1.5rem;
+            background: var(--light-bg);
+            border-radius: 12px;
+            transition: var(--transition);
+        }
+
+        .benefit-item:hover {
+            background: #e0f2fe;
+            transform: translateX(5px);
+        }
+
+        .benefit-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--primary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            flex-shrink: 0;
+        }
+
+        .benefit-text {
+            font-weight: 500;
+            color: var(--text-dark);
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+            border-radius: 20px;
+            margin: 3rem 0;
+        }
+
+        .cta-section h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .cta-section p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-light {
+            background: white;
+            color: var(--primary-color);
+            border: 2px solid white;
+        }
+
+        .btn-light:hover {
+            background: transparent;
+            color: white;
+        }
+
+        .btn-white {
+            background: white;
+            color: var(--primary-color);
+            border: 2px solid white;
+            font-weight: 600;
+        }
+
+        .btn-white:hover {
+            background: transparent;
+            color: white;
+            border-color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(255, 255, 255, 0.3);
+        }
+
+        /* Footer */
+        .footer {
+            background: #1a202c;
+            color: white;
+            padding: 3rem 0 1rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #ffd700;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-section ul li a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section ul li a:hover {
+            color: #ffd700;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .carousel-caption h2 {
+                font-size: 2.5rem;
+            }
+
+            .carousel-caption p {
+                font-size: 1.1rem;
+            }
+
+            .hero-stats {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <!-- Logo -->
+                <div class="nav-logo">
+                    <!-- <a href="index.html" class="logo-link"> -->
+                        <img src="logonew.png" alt="ICM Logo" class="logo-img">
+                        <!-- <span class="logo-text">ICM</span> -->
+                    <!-- </a> -->
+                </div>
+                
+                <!-- Navigation links in the middle -->
+                <div class="nav-center">
+                    <ul class="nav-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li class="nav-dropdown">
+                            <a href="loan-products.html" class="dropdown-toggle">Loan Products <i class="fas fa-chevron-down"></i></a>
+                            <div class="dropdown-menu">
+                                <a href="personal-loan.html" class="dropdown-item">
+                                    <i class="fas fa-wallet"></i>
+                                    <div>
+                                        <strong>Personal Loan</strong>
+                                        <span>Up to ₹50 Lakhs</span>
+                                    </div>
+                                </a>
+                                <a href="home-loan-new.html" class="dropdown-item">
+                                    <i class="fas fa-home"></i>
+                                    <div>
+                                        <strong>Home Loan</strong>
+                                        <span>Up to ₹5 Crores</span>
+                                    </div>
+                                </a>
+                                <a href="business-loan.html" class="dropdown-item">
+                                    <i class="fas fa-briefcase"></i>
+                                    <div>
+                                        <strong>Business Loan</strong>
+                                        <span>Up to ₹2 Crores</span>
+                                    </div>
+                                </a>
+                                <a href="vehicle-loan.html" class="dropdown-item">
+                                    <i class="fas fa-car"></i>
+                                    <div>
+                                        <strong>Vehicle Loan</strong>
+                                        <span>Cars & Two Wheelers</span>
+                                    </div>
+                                </a>
+                                <a href="education-loan.html" class="dropdown-item">
+                                    <i class="fas fa-graduation-cap"></i>
+                                    <div>
+                                        <strong>Education Loan</strong>
+                                        <span>Study in India & Abroad</span>
+                                    </div>
+                                </a>
+                                <!-- <a href="gold-loan.html" class="dropdown-item">
+                                    <i class="fas fa-coins"></i>
+                                    <div>
+                                        <strong>Gold Loan</strong>
+                                        <span>Instant Approval</span>
+                                    </div>
+                                </a> -->
+                            </div>
+                        </li>
+                        <li><a href="free-credit-score.html">Free Credit Score</a></li>
+                        <li><a href="partner-with-us.html" class="active">Partner with Us</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Apply button on the right -->
+                <div class="nav-actions">
+                    <a href="apply-for-loan.html" class="btn btn-primary">Apply for Loan</a>
+                </div>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Carousel -->
+    <section class="hero-carousel">
+        <div class="carousel-container">
+            <div class="carousel-slide active">
+                <img src="https://images.unsplash.com/photo-1559526324-593bc073d938?auto=format&fit=crop&w=1920&h=1080" alt="Partnership Background">
+                <div class="carousel-caption">
+                    <h2>Partner with Infinite Capital</h2>
+                    <p>Join our network of trusted partners and grow your business while helping customers achieve their financial goals.</p>
+                    <div class="hero-stats">
+                        <div class="hero-stat">
+                            <span class="hero-stat-number">500+</span>
+                            <span class="hero-stat-text">Active Partners</span>
+                        </div>
+                        <div class="hero-stat">
+                            <span class="hero-stat-number">95%</span>
+                            <span class="hero-stat-text">Partner Satisfaction</span>
+                        </div>
+                        <div class="hero-stat">
+                            <span class="hero-stat-number">₹50Cr+</span>
+                            <span class="hero-stat-text">Partner Earnings</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="carousel-slide">
+                <img src="https://images.unsplash.com/photo-1556155092-490a1ba16284?auto=format&fit=crop&w=1920&h=1080" alt="Business Growth">
+                <div class="carousel-caption">
+                    <h2>Grow Your Business</h2>
+                    <p>Expand your revenue streams with our comprehensive partnership programs designed for sustainable growth.</p>
+                    <div class="hero-stats">
+                        <div class="hero-stat">
+                            <span class="hero-stat-number">3X</span>
+                            <span class="hero-stat-text">Revenue Growth</span>
+                        </div>
+                        <div class="hero-stat">
+                            <span class="hero-stat-number">24/7</span>
+                            <span class="hero-stat-text">Support Available</span>
+                        </div>
+                        <div class="hero-stat">
+                            <span class="hero-stat-number">100%</span>
+                            <span class="hero-stat-text">Digital Platform</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="carousel-slide">
+                <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=1920&h=1080" alt="Partnership Success">
+                <div class="carousel-caption">
+                    <h2>Partnership Success</h2>
+                    <p>Join a proven partnership model with comprehensive training, marketing support, and attractive commission structures.</p>
+                    <div class="hero-stats">
+                        <div class="hero-stat">
+                            <span class="hero-stat-number">15%</span>
+                            <span class="hero-stat-text">Commission Rate</span>
+                        </div>
+                        <div class="hero-stat">
+                            <span class="hero-stat-number">30 Days</span>
+                            <span class="hero-stat-text">Quick Onboarding</span>
+                        </div>
+                        <div class="hero-stat">
+                            <span class="hero-stat-number">99%</span>
+                            <span class="hero-stat-text">Partner Retention</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="carousel-nav">
+            <div class="carousel-dot active" data-slide="0"></div>
+            <div class="carousel-dot" data-slide="1"></div>
+            <div class="carousel-dot" data-slide="2"></div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Partnership Types -->
+            <section class="section">
+                <h2 class="section-title">Partnership Opportunities</h2>
+                <p class="section-subtitle">Choose the partnership model that best fits your business goals and customer base</p>
+                
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-handshake"></i>
+                        </div>
+                        <h3>Business Partners</h3>
+                        <p>Join as a business partner and refer customers for all our loan products. Perfect for financial consultants, real estate agents, and business advisors.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3>Channel Partners</h3>
+                        <p>Become a channel partner with dedicated territory rights and exclusive benefits. Ideal for established businesses with existing customer networks.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-store"></i>
+                        </div>
+                        <h3>Franchise Partners</h3>
+                        <p>Open your own Infinite Capital branch with full franchise support, marketing materials, and comprehensive business training.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-laptop"></i>
+                        </div>
+                        <h3>Digital Partners</h3>
+                        <p>Leverage our digital platform to offer loans through your website or app with seamless API integration and white-label solutions.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-building"></i>
+                        </div>
+                        <h3>Corporate Partners</h3>
+                        <p>Partner with us to offer employee loan benefits and corporate financing solutions with special rates and dedicated support.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3>Investment Partners</h3>
+                        <p>Join our investment network for co-lending opportunities and portfolio diversification with attractive returns and risk management.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Partnership Benefits -->
+            <section class="benefits-section">
+                <div class="container">
+                    <h2 class="section-title">Why Partner with Us?</h2>
+                    <p class="section-subtitle">Experience the advantages of partnering with India's fastest-growing financial services company</p>
+                    
+                    <div class="benefits-list">
+                        <div class="benefit-item">
+                            <div class="benefit-icon">
+                                <i class="fas fa-percentage"></i>
+                            </div>
+                            <div class="benefit-text">Attractive commission structure up to 15%</div>
+                        </div>
+                        
+                        <div class="benefit-item">
+                            <div class="benefit-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="benefit-text">Quick loan approvals within 24 hours</div>
+                        </div>
+                        
+                        <div class="benefit-item">
+                            <div class="benefit-icon">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <div class="benefit-text">Comprehensive training and certification</div>
+                        </div>
+                        
+                        <div class="benefit-item">
+                            <div class="benefit-icon">
+                                <i class="fas fa-bullhorn"></i>
+                            </div>
+                            <div class="benefit-text">Marketing and promotional support</div>
+                        </div>
+                        
+                        <div class="benefit-item">
+                            <div class="benefit-icon">
+                                <i class="fas fa-headset"></i>
+                            </div>
+                            <div class="benefit-text">24/7 dedicated partner support</div>
+                        </div>
+                        
+                        <div class="benefit-item">
+                            <div class="benefit-icon">
+                                <i class="fas fa-mobile-alt"></i>
+                            </div>
+                            <div class="benefit-text">Advanced CRM and mobile app access</div>
+                        </div>
+                        
+                        <div class="benefit-item">
+                            <div class="benefit-icon">
+                                <i class="fas fa-trophy"></i>
+                            </div>
+                            <div class="benefit-text">Performance incentives and rewards</div>
+                        </div>
+                        
+                        <div class="benefit-item">
+                            <div class="benefit-icon">
+                                <i class="fas fa-chart-bar"></i>
+                            </div>
+                            <div class="benefit-text">Real-time analytics and reporting</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Requirements -->
+            <section class="section">
+                <h2 class="section-title">Partnership Requirements</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-id-card"></i>
+                        </div>
+                        <h3>Individual Partners</h3>
+                        <p><strong>Required Documents:</strong><br>
+                        • PAN Card & Aadhaar Card<br>
+                        • Bank Account Details<br>
+                        • Address Proof<br>
+                        • Educational Certificates<br>
+                        • Experience Certificate (if applicable)</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-briefcase"></i>
+                        </div>
+                        <h3>Business Partners</h3>
+                        <p><strong>Required Documents:</strong><br>
+                        • Business Registration Certificate<br>
+                        • GST Registration<br>
+                        • Financial Statements (Last 2 Years)<br>
+                        • Bank Statements<br>
+                        • Office Address Proof</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Call to Action -->
+            <section class="cta-section">
+                <div class="container">
+                    <h2>Ready to Partner with Us?</h2>
+                    <p>Join thousands of successful partners and start earning with Infinite Capital Management today!</p>
+                    <div class="cta-buttons">
+                        <a href="#contact" class="btn btn-light">Become a Partner</a>
+                        <a href="partner-brochure.html" class="btn btn-white">Download Brochure</a>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <!-- About Section -->
+                <div class="footer-about">
+                    <div class="footer-logo">
+                        <img src="logonew.png" alt="ICM Logo">
+                        <div>
+                            <span style="font-size: 28px; font-weight: 800; background: linear-gradient(45deg, #ffd700, #ffed4e); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; text-shadow: 0 2px 4px rgba(0,0,0,0.1); display: block; line-height: 1;">ICM</span>
+                            <span style="font-size: 14px; color: #94a3b8; font-weight: 500; letter-spacing: 1px;">Infinite Capital</span>
+                        </div>
+                    </div>
+                    <p>Your trusted partner for all your financial needs. We provide transparent and hassle-free loan solutions with competitive rates and quick approvals.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" aria-label="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+                <!-- Quick Links Section -->
+                <div class="footer-links">
+                    <h3>
+                        Quick Links
+                        <span></span>
+                    </h3>
+                    <ul>
+                        <li>
+                            <a href="index.html">
+                                <i class="fas fa-chevron-right"></i>
+                                <span>Home</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="personal-loan.html">
+                                <i class="fas fa-chevron-right"></i>
+                                <span>Personal Loan</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="business-loan.html">
+                                <i class="fas fa-chevron-right"></i>
+                                <span>Business Loan</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="home-loan.html">
+                                <i class="fas fa-chevron-right"></i>
+                                <span>Home Loan</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="vehicle-loan.html">
+                                <i class="fas fa-chevron-right"></i>
+                                <span>Vehicle Loan</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Contact Section -->
+                <div class="footer-contact">
+                    <h3>
+                        Contact Us
+                        <span></span>
+                    </h3>
+                    <div>
+                        <!-- <div class="icon-wrapper"> -->
+                            <i class="fas fa-map-marker-alt"></i>
+                        <!-- </div> -->
+                        <p>Lane No.6 Rajput dairy matiala Road Nearest Metro Nawada, New Delhi, Bharat, 110059</p>
+                    </div>
+                    <div>
+                        <!-- <div class="icon-wrapper"> -->
+                            <i class="fas fa-phone-alt"></i>
+                        <!-- </div> -->
+                        <div class="contact-info">
+                            <p>+91 98765 43210</p>
+                            <p>Mon-Sat: 9:00 AM - 7:00 PM</p>
+                        </div>
+                    </div>
+                    <div>
+                        <!-- <div class="icon-wrapper"> -->
+                            <i class="fas fa-envelope"></i>
+                        <!-- </div> -->
+                        <div class="contact-info">
+                            <p>info@infinitecapital.com</p>
+                            <p>We'll respond within 24 hours</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Newsletter Section -->
+             
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Infinite Capital Management. All Rights Reserved.</p>
+                <div class="footer-legal">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Use</a>
+                    <a href="#">Disclaimer</a>
+                </div>
+            </div>
+            <div class="footer-disclaimer">
+                <p>ICM is a registered with all NBFC and bank . All loans at the sole discretion of the lender. Terms and conditions apply.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Carousel functionality
+        const slides = document.querySelectorAll('.carousel-slide');
+        const dots = document.querySelectorAll('.carousel-dot');
+        let currentSlide = 0;
+
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.classList.toggle('active', i === index);
+            });
+            dots.forEach((dot, i) => {
+                dot.classList.toggle('active', i === index);
+            });
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % slides.length;
+            showSlide(currentSlide);
+        }
+
+        // Auto-play carousel
+        setInterval(nextSlide, 5000);
+
+        // Dot navigation
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                currentSlide = index;
+                showSlide(currentSlide);
+            });
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+    
+    <script>
+    // Mobile Menu Toggle - Standardized for All Pages
+    document.addEventListener('DOMContentLoaded', function() {
+        const hamburger = document.querySelector('.hamburger');
+        const navCenter = document.querySelector('.nav-center');
+        const body = document.body;
+        
+        // Create overlay for mobile menu
+        let overlay = document.querySelector('.mobile-menu-overlay');
+        if (!overlay) {
+            overlay = document.createElement('div');
+            overlay.className = 'mobile-menu-overlay';
+            document.body.appendChild(overlay);
+        }
+        
+        // Toggle mobile menu
+        if (hamburger && navCenter) {
+            hamburger.addEventListener('click', function(e) {
+                e.stopPropagation();
+                navCenter.classList.toggle('active');
+                hamburger.classList.toggle('active');
+                body.classList.toggle('menu-open');
+                overlay.classList.toggle('active');
+            });
+            
+            // Close menu when clicking overlay
+            overlay.addEventListener('click', function() {
+                navCenter.classList.remove('active');
+                hamburger.classList.remove('active');
+                body.classList.remove('menu-open');
+                overlay.classList.remove('active');
+            });
+        }
+        
+        // Mobile dropdown toggle
+        document.querySelectorAll('.nav-dropdown > .dropdown-toggle').forEach(toggle => {
+            toggle.addEventListener('click', function(e) {
+                if (window.innerWidth <= 992) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    this.parentElement.classList.toggle('active');
+                }
+            });
+        });
+        
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-center .nav-links a').forEach(link => {
+            link.addEventListener('click', function() {
+                if (window.innerWidth <= 992) {
+                    navCenter.classList.remove('active');
+                    hamburger.classList.remove('active');
+                    body.classList.remove('menu-open');
+                    overlay.classList.remove('active');
+                }
+            });
+        });
+        
+        // Close mobile menu on window resize
+        window.addEventListener('resize', function() {
+            if (window.innerWidth > 992) {
+                navCenter.classList.remove('active');
+                hamburger.classList.remove('active');
+                body.classList.remove('menu-open');
+                overlay.classList.remove('active');
+            }
+        });
+        
+        // Close mobile menu on escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && navCenter.classList.contains('active')) {
+                navCenter.classList.remove('active');
+                hamburger.classList.remove('active');
+                body.classList.remove('menu-open');
+                overlay.classList.remove('active');
+            }
+        });
+    });
+    </script>
+</body>
+</html>
+
+
