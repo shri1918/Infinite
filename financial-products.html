@@ -117,23 +117,23 @@
 
         /* Section Styles */
         .financial-section {
-            padding: 100px 0 60px;
+            padding: 100px 0 80px;
             background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
         }
 
         /* Header Styles */
         .section-header {
             text-align: center;
-            margin-bottom: 40px;
+            margin-bottom: 60px;
         }
 
         .section-badge {
             display: inline-block;
             background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
             color: white;
-            padding: 10px 20px;
+            padding: 10px 24px;
             border-radius: 50px;
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             font-weight: 600;
             letter-spacing: 1px;
             margin-bottom: 20px;
@@ -144,7 +144,7 @@
             font-size: 2.8rem;
             font-weight: 700;
             color: #1a365d;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
             letter-spacing: -0.5px;
         }
 
@@ -167,17 +167,8 @@
         /* Grid Styles */
         .products-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 25px;
-            margin-top: 40px;
-            align-items: stretch;
-            grid-auto-rows: 1fr;
-        }
-        
-        /* Ensure all grid items stretch to same height */
-        .products-grid > * {
-            height: 100%;
-            min-height: 100%;
+            grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+            gap: 32px;
         }
 
         /* Card Styles */
@@ -191,8 +182,6 @@
             display: flex;
             flex-direction: column;
             height: 100%;
-            width: 100%;
-            align-self: stretch;
         }
 
         .product-card:hover {
@@ -202,16 +191,16 @@
 
         /* Card Header */
         .card-header {
-            padding: 30px 25px;
+            padding: 32px 24px;
             color: white;
             text-align: center;
-            position: relative;
             background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
             flex-shrink: 0;
-            height: 170px;
             display: flex;
             flex-direction: column;
+            align-items: center;
             justify-content: center;
+            gap: 12px;
         }
 
         .card-header.green { background: linear-gradient(135deg, #10b981 0%, #059669 100%); }
@@ -228,109 +217,91 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 auto 12px;
             font-size: 32px;
+            flex-shrink: 0;
         }
 
         .card-title {
-            font-size: 1.4rem;
+            font-size: 1.5rem;
             font-weight: 700;
-            margin-bottom: 6px;
             line-height: 1.3;
+            margin: 0;
         }
 
         .card-subtitle {
             font-size: 0.9rem;
             opacity: 0.9;
             line-height: 1.4;
+            margin: 0;
         }
 
         /* Card Body */
         .card-body {
-            padding: 25px;
-            flex: 1 1 auto;
+            padding: 28px;
+            flex: 1;
             display: flex;
             flex-direction: column;
-            min-height: 0;
-            justify-content: flex-start;
+            gap: 18px;
         }
 
         /* Highlight Box */
         .highlight-box {
             background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
-            padding: 15px;
+            padding: 16px;
             border-radius: 10px;
-            margin-bottom: 20px;
             border-left: 4px solid #2563eb;
             color: #1e40af;
             font-weight: 600;
-            font-size: 0.9rem;
+            font-size: 0.95rem;
             line-height: 1.5;
             flex-shrink: 0;
-            min-height: 65px;
-            display: flex;
-            align-items: center;
+            margin: 0;
         }
 
         .highlight-box.green { 
             background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%); 
             border-left-color: #10b981; 
             color: #166534; 
-            min-height: 65px;
         }
         .highlight-box.amber { 
             background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%); 
             border-left-color: #f59e0b; 
             color: #92400e; 
-            min-height: 65px;
         }
         .highlight-box.purple { 
             background: linear-gradient(135deg, #faf5ff 0%, #f3e8ff 100%); 
             border-left-color: #8b5cf6; 
             color: #6b21a8; 
-            min-height: 65px;
         }
         .highlight-box.pink { 
             background: linear-gradient(135deg, #fdf2f8 0%, #fce7f3 100%); 
             border-left-color: #ec4899; 
             color: #9f1239; 
-            min-height: 65px;
         }
         .highlight-box.cyan { 
             background: linear-gradient(135deg, #ecfeff 0%, #cffafe 100%); 
             border-left-color: #06b6d4; 
             color: #164e63; 
-            min-height: 65px;
         }
 
         /* Description */
         .card-description {
             color: #64748b;
             line-height: 1.7;
-            margin-bottom: 20px;
-            font-size: 0.9rem;
-            flex-shrink: 0;
-            min-height: 85px;
+            font-size: 0.95rem;
+            margin: 0;
         }
 
         /* Benefits Section */
         .benefits-section {
-            margin-bottom: 20px;
             flex-shrink: 0;
-            min-height: 195px;
-        }
-        
-        .benefits-list {
-            list-style: none;
-            padding: 0;
-            margin: 0;
         }
 
         .benefits-title {
             color: #1e293b;
             font-weight: 600;
-            margin-bottom: 12px;
             font-size: 1rem;
+            margin: 0 0 12px 0;
         }
 
         .benefits-list {
@@ -339,26 +310,22 @@
             margin: 0;
             display: flex;
             flex-direction: column;
+            gap: 10px;
         }
 
         .benefit-item {
-            padding: 9px 0;
             color: #475569;
             display: flex;
             align-items: flex-start;
             gap: 10px;
-            font-size: 0.9rem;
+            font-size: 0.95rem;
             line-height: 1.5;
             min-height: 24px;
-        }
-        
-        .benefit-item span {
-            flex: 1;
         }
 
         .benefit-icon {
             color: #10b981;
-            margin-top: 4px;
+            margin-top: 2px;
             flex-shrink: 0;
             font-size: 0.9rem;
         }
@@ -368,572 +335,448 @@
             background: #f8fafc;
             padding: 18px;
             border-radius: 10px;
-            margin-bottom: 18px;
             flex-shrink: 0;
-            min-height: 130px;
         }
 
         .steps-title {
             color: #1e293b;
             font-weight: 600;
-            margin-bottom: 12px;
             font-size: 1rem;
+            margin: 0 0 12px 0;
         }
 
         .steps-list {
             padding-left: 20px;
             margin: 0;
             color: #475569;
-            font-size: 0.9rem;
+            font-size: 0.95rem;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
         }
 
         .steps-list li {
-            padding: 6px 0;
             line-height: 1.5;
-            margin-bottom: 2px;
             min-height: 22px;
-        }
-        
-        .steps-list li:last-child {
-            margin-bottom: 0;
         }
 
         /* FAQ Section */
         .faq-section {
-            margin-bottom: 0;
-            margin-top: auto;
             flex-shrink: 0;
-            padding-top: 10px;
+            margin-top: auto;
+            padding-top: 8px;
         }
 
         .faq-details {
-            margin-bottom: 0;
+            margin: 0;
         }
 
         .faq-summary {
             cursor: pointer;
             color: #2563eb;
             font-weight: 600;
-            font-size: 0.85rem;
+            font-size: 0.9rem;
             padding: 6px 0;
             user-select: none;
             display: flex;
             align-items: center;
             gap: 8px;
+            transition: color 0.2s;
         }
 
         .faq-summary:hover {
             text-decoration: underline;
         }
 
-        .faq-summary::marker {
-            color: #2563eb;
-        }
-
-        .faq-details[open] .faq-summary {
-            color: #1d4ed8;
-        }
-
-        /* Color-coded FAQ summaries for each card */
+        /* Color-coded FAQ for each card */
         .product-card:nth-child(1) .faq-summary { color: #2563eb; }
-        .product-card:nth-child(1) .faq-details[open] .faq-summary { color: #1d4ed8; }
         .product-card:nth-child(2) .faq-summary { color: #10b981; }
-        .product-card:nth-child(2) .faq-details[open] .faq-summary { color: #059669; }
         .product-card:nth-child(3) .faq-summary { color: #f59e0b; }
-        .product-card:nth-child(3) .faq-details[open] .faq-summary { color: #d97706; }
         .product-card:nth-child(4) .faq-summary { color: #8b5cf6; }
-        .product-card:nth-child(4) .faq-details[open] .faq-summary { color: #7c3aed; }
         .product-card:nth-child(5) .faq-summary { color: #ec4899; }
-        .product-card:nth-child(5) .faq-details[open] .faq-summary { color: #db2777; }
         .product-card:nth-child(6) .faq-summary { color: #06b6d4; }
-        .product-card:nth-child(6) .faq-details[open] .faq-summary { color: #0891b2; }
 
         .faq-content {
-            padding: 12px 0;
+            padding: 12px 0 0 0;
             color: #64748b;
-            font-size: 0.85rem;
-            line-height: 1.7;
+            font-size: 0.9rem;
+            line-height: 1.6;
         }
 
         .faq-content p {
-            margin-bottom: 8px;
-        }
-        
-        .faq-content p:last-child {
-            margin-bottom: 0;
+            margin: 8px 0;
         }
 
         .faq-content strong {
             color: #1e293b;
-            font-weight: 600;
         }
 
-        /* Button Styles */
+        /* CTA Button */
         .cta-button {
+            display: inline-block;
+            padding: 14px 24px;
             background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
-            border: none;
-            padding: 14px;
-            font-weight: 600;
-            letter-spacing: 0.5px;
-            text-transform: uppercase;
-            font-size: 0.9rem;
             color: white;
             text-decoration: none;
-            display: block;
-            text-align: center;
             border-radius: 8px;
-            transition: all 0.3s ease;
+            font-weight: 600;
+            font-size: 0.9rem;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            text-align: center;
             width: 100%;
+            border: none;
             cursor: pointer;
+            transition: all 0.3s ease;
+            flex-shrink: 0;
             margin-top: auto;
         }
 
+        .product-card:nth-child(2) .cta-button { background: linear-gradient(135deg, #10b981 0%, #059669 100%); }
+        .product-card:nth-child(3) .cta-button { background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%); }
+        .product-card:nth-child(4) .cta-button { background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%); }
+        .product-card:nth-child(5) .cta-button { background: linear-gradient(135deg, #ec4899 0%, #db2777 100%); }
+        .product-card:nth-child(6) .cta-button { background: linear-gradient(135deg, #06b6d4 0%, #0891b2 100%); }
+
         .cta-button:hover {
             transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
         }
-
-        .cta-button.green { background: linear-gradient(135deg, #10b981 0%, #059669 100%); }
-        .cta-button.amber { background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%); }
-        .cta-button.purple { background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%); }
-        .cta-button.pink { background: linear-gradient(135deg, #ec4899 0%, #db2777 100%); }
-        .cta-button.cyan { background: linear-gradient(135deg, #06b6d4 0%, #0891b2 100%); }
 
         /* Responsive Design */
         @media (max-width: 768px) {
-            .financial-section {
-                padding: 90px 0 60px;
+            .products-grid {
+                grid-template-columns: 1fr;
+                gap: 24px;
             }
-            
+
             .section-title {
                 font-size: 2rem;
             }
 
-            .section-description {
-                font-size: 1rem;
-            }
-
-            .products-grid {
-                grid-template-columns: 1fr;
-                gap: 25px;
-            }
-            
-            .products-grid > * {
-                height: auto;
-            }
-
             .card-body {
-                padding: 25px 20px;
-            }
-
-            .card-header {
-                padding: 30px 20px;
-                min-height: 160px;
-            }
-
-            .card-icon {
-                width: 70px;
-                height: 70px;
-                font-size: 28px;
-            }
-
-            .card-title {
-                font-size: 1.3rem;
-            }
-            
-            .highlight-box {
-                padding: 15px;
-                font-size: 0.9rem;
+                padding: 20px;
+                gap: 14px;
             }
         }
     </style>
-    <!-- Financial Products Section: Mutual Funds, Insurance, Fixed Deposits, Bonds, PMS, AIF -->
-    <section class="financial-section">
-        <div class="container">
-            <!-- Section Header -->
-            <div class="section-header">
-                <div class="section-badge">Investment Solutions</div>
-                <h2 class="section-title">Comprehensive Financial Products</h2>
-                <div class="section-divider"></div>
-                <p class="section-description">
-                    Build wealth, protect your family, and secure your future with our diverse range of investment and insurance products
-                </p>
+   <section class="financial-section">
+    <div class="container">
+        <!-- Section Header -->
+        <div class="section-header">
+            <div class="section-badge">Investment Solutions</div>
+            <h2 class="section-title">Comprehensive Financial Products</h2>
+            <div class="section-divider"></div>
+            <p class="section-description">
+                Build wealth, protect your family, and secure your future with our diverse range of investment and insurance products
+            </p>
+        </div>
+
+        <!-- Products Grid -->
+        <div class="products-grid">
+            <!-- Mutual Funds Card -->
+            <div class="product-card">
+                <div class="card-header">
+                    <div class="card-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3 class="card-title">Mutual Funds</h3>
+                    <p class="card-subtitle">Build Wealth Effortlessly with Diversified Mutual Funds</p>
+                </div>
+                <div class="card-body">
+                    <div class="highlight-box">
+                        Start SIPs from Just ₹500! Historical returns of 12-15% p.a. for equity schemes over 5+ years.
+                    </div>
+                    <p class="card-description">
+                        Discover the power of professional fund management across equity, debt, hybrid, and index funds tailored to your risk profile and goals. Benefit from rupee cost averaging via SIPs, tax advantages under Section 80C.
+                    </p>
+                    <div class="benefits-section">
+                        <h5 class="benefits-title">Key Benefits:</h5>
+                        <ul class="benefits-list">
+                            <li class="benefit-item">
+                                <i class="fas fa-check-circle benefit-icon"></i>
+                                <span>Diversification across 100+ stocks/bonds to minimize risk</span>
+                            </li>
+                            <li class="benefit-item">
+                                <i class="fas fa-check-circle benefit-icon"></i>
+                                <span>Professional expertise from top AMCs like HDFC, SBI, ICICI</span>
+                            </li>
+                            <li class="benefit-item">
+                                <i class="fas fa-check-circle benefit-icon"></i>
+                                <span>Flexible options: Lump sum or SIP with step-up features</span>
+                            </li>
+                            <li class="benefit-item">
+                                <i class="fas fa-check-circle benefit-icon"></i>
+                                <span>Easy tracking via apps; switch funds penalty-free</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="steps-section">
+                        <h5 class="steps-title">How to Invest (3 Simple Steps):</h5>
+                        <ol class="steps-list">
+                            <li>Assess goals and risk via free consultation</li>
+                            <li>Choose funds from our curated list</li>
+                            <li>Complete KYC online and start investing instantly</li>
+                        </ol>
+                    </div>
+                   
+                    
+                </div>
             </div>
 
-            <!-- Products Grid -->
-            <div class="products-grid">
-                <!-- Mutual Funds Card -->
-                <div class="product-card">
-                    <div class="card-header">
-                        <div class="card-icon">
-                            <i class="fas fa-chart-line"></i>
-                        </div>
-                        <h3 class="card-title">Mutual Funds</h3>
-                        <p class="card-subtitle">Build Wealth Effortlessly with Diversified Mutual Funds</p>
+            <!-- Insurance Card -->
+            <div class="product-card">
+                <div class="card-header green">
+                    <div class="card-icon">
+                        <i class="fas fa-shield-alt"></i>
                     </div>
-                    <div class="card-body">
-                        <div class="highlight-box">
-                            Start SIPs from Just ₹500! Historical returns of 12-15% p.a. for equity schemes over 5+ years.
-                        </div>
-                        <p class="card-description">
-                            Discover the power of professional fund management across equity, debt, hybrid, and index funds tailored to your risk profile and goals. Benefit from rupee cost averaging via SIPs, tax advantages under Section 80C.
-                        </p>
-                        <div class="benefits-section">
-                            <h5 class="benefits-title">Key Benefits:</h5>
-                            <ul class="benefits-list">
-                                <li class="benefit-item">
-                                    <i class="fas fa-check-circle benefit-icon"></i>
-                                    <span>Diversification across 100+ stocks/bonds to minimize risk</span>
-                                </li>
-                                <li class="benefit-item">
-                                    <i class="fas fa-check-circle benefit-icon"></i>
-                                    <span>Professional expertise from top AMCs like HDFC, SBI, ICICI</span>
-                                </li>
-                                <li class="benefit-item">
-                                    <i class="fas fa-check-circle benefit-icon"></i>
-                                    <span>Flexible options: Lump sum or SIP with step-up features</span>
-                                </li>
-                                <li class="benefit-item">
-                                    <i class="fas fa-check-circle benefit-icon"></i>
-                                    <span>Easy tracking via apps; switch funds penalty-free</span>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="steps-section">
-                            <h5 class="steps-title">How to Invest (3 Simple Steps):</h5>
-                            <ol class="steps-list">
-                                <li>Assess goals and risk via free consultation</li>
-                                <li>Choose funds from our curated list</li>
-                                <li>Complete KYC online and start investing instantly</li>
-                            </ol>
-                        </div>
-                        <div class="faq-section">
-                            <details class="faq-details">
-                                <summary class="faq-summary">
-                                    <i class="fas fa-chevron-right" style="font-size: 0.8rem;"></i>
-                                    View FAQs
-                                </summary>
-                                <div class="faq-content">
-                                    <p><strong>Minimum investment?</strong> ₹500 for SIP, ₹5,000 lump sum.</p>
-                                    <p><strong>Risks?</strong> Market-linked; equity high, debt low.</p>
-                                    <p><strong>Taxation?</strong> LTCG >₹1.25L at 12.5% post-2024 budget.</p>
-                                </div>
-                            </details>
-                        </div>
-                    </div>
+                    <h3 class="card-title">Insurance</h3>
+                    <p class="card-subtitle">Safeguard Your Family's Future with Affordable Coverage</p>
                 </div>
-
-                <!-- Insurance Card -->
-                <div class="product-card">
-                    <div class="card-header green">
-                        <div class="card-icon">
-                            <i class="fas fa-shield-alt"></i>
-                        </div>
-                        <h3 class="card-title">Insurance</h3>
-                        <p class="card-subtitle">Safeguard Your Family's Future with Affordable Coverage</p>
+                <div class="card-body">
+                    <div class="highlight-box green">
+                        Coverage from ₹10 Lakh! Premiums starting ₹500/month for ₹1 Cr coverage (age 30, non-smoker).
                     </div>
-                    <div class="card-body">
-                        <div class="highlight-box green">
-                            Coverage from ₹10 Lakh! Premiums starting ₹500/month for ₹1 Cr coverage (age 30, non-smoker).
-                        </div>
-                        <p class="card-description">
-                            Combine protection with wealth creation through term plans, ULIPs, and health policies from LIC, Max Life, and HDFC Life. ULIPs blending insurance + market-linked returns up to 10-12% p.a.
-                        </p>
-                        <div class="benefits-section">
-                            <h5 class="benefits-title">Key Benefits:</h5>
-                            <ul class="benefits-list">
-                                <li class="benefit-item">
-                                    <i class="fas fa-check-circle benefit-icon"></i>
-                                    <span>High coverage at low cost; riders for accidental death or disability</span>
-                                </li>
-                                <li class="benefit-item">
-                                    <i class="fas fa-check-circle benefit-icon"></i>
-                                    <span>ULIPs offer fund switching and partial withdrawals post-5 years</span>
-                                </li>
-                                <li class="benefit-item">
-                                    <i class="fas fa-check-circle benefit-icon"></i>
-                                    <span>Tax-free maturity under Section 10(10D); deductions on premiums</span>
-                                </li>
-                                <li class="benefit-item">
-                                    <i class="fas fa-check-circle benefit-icon"></i>
-                                    <span>Instant claims with digital processing</span>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="steps-section">
-                            <h5 class="steps-title">How to Get Covered (3 Simple Steps):</h5>
-                            <ol class="steps-list">
-                                <li>Share health/lifestyle details for instant quote</li>
-                                <li>Customize riders and tenure (10-40 years)</li>
-                                <li>E-sign policy and pay premium online</li>
-                            </ol>
-                        </div>
-                        <div class="faq-section">
-                            <details class="faq-details">
-                                <summary class="faq-summary">
-                                    <i class="fas fa-chevron-right" style="font-size: 0.8rem;"></i>
-                                    View FAQs
-                                </summary>
-                                <div class="faq-content">
-                                    <p><strong>Renewal?</strong> Annual; no medical tests post-issue.</p>
-                                    <p><strong>ULIP lock-in?</strong> 5 years.</p>
-                                    <p><strong>Payout speed?</strong> 90% claims settled within 30 days.</p>
-                                </div>
-                            </details>
-                        </div>
+                    <p class="card-description">
+                        Combine protection with wealth creation through term plans, ULIPs, and health policies from LIC, Max Life, and HDFC Life. ULIPs blending insurance + market-linked returns up to 10-12% p.a.
+                    </p>
+                    <div class="benefits-section">
+                        <h5 class="benefits-title">Key Benefits:</h5>
+                        <ul class="benefits-list">
+                            <li class="benefit-item">
+                                <i class="fas fa-check-circle benefit-icon"></i>
+                                <span>High coverage at low cost; riders for accidental death or disability</span>
+                            </li>
+                            <li class="benefit-item">
+                                <i class="fas fa-check-circle benefit-icon"></i>
+                                <span>ULIPs offer fund switching and partial withdrawals post-5 years</span>
+                            </li>
+                            <li class="benefit-item">
+                                <i class="fas fa-check-circle benefit-icon"></i>
+                                <span>Tax-free maturity under Section 10(10D); deductions on premiums</span>
+                            </li>
+                            <li class="benefit-item">
+                                <i class="fas fa-check-circle benefit-icon"></i>
+                                <span>Instant claims with digital processing</span>
+                            </li>
+                        </ul>
                     </div>
+                    <div class="steps-section">
+                        <h5 class="steps-title">How to Get Covered (3 Simple Steps):</h5>
+                        <ol class="steps-list">
+                            <li>Share health/lifestyle details for instant quote</li>
+                            <li>Customize riders and tenure (10-40 years)</li>
+                            <li>E-sign policy and pay premium online</li>
+                        </ol>
+                    </div>
+                   
+                    
                 </div>
+            </div>
 
-                <!-- Fixed Deposits Card -->
-                <div class="product-card">
-                    <div class="card-header amber">
-                        <div class="card-icon">
-                            <i class="fas fa-piggy-bank"></i>
-                        </div>
-                        <h3 class="card-title">Fixed Deposits</h3>
-                        <p class="card-subtitle">Lock in Guaranteed 7-8.5% Returns – No Market Risk!</p>
+            <!-- Fixed Deposits Card -->
+            <div class="product-card">
+                <div class="card-header amber">
+                    <div class="card-icon">
+                        <i class="fas fa-piggy-bank"></i>
                     </div>
-                    <div class="card-body">
-                        <div class="highlight-box amber">
-                            Earn predictable interest on your savings with FDs from SBI, HDFC Bank, Bajaj Finance. Senior citizen rates up to 0.5% extra.
-                        </div>
-                        <p class="card-description">
-                            Choose tenures from 7 days to 10 years, with quarterly/monthly payouts. Principal protected up to ₹5 Lakh per bank via DICGC; ideal for emergency funds or steady income.
-                        </p>
-                        <div class="benefits-section">
-                            <h5 class="benefits-title">Key Benefits:</h5>
-                            <ul class="benefits-list">
-                                <li class="benefit-item">
-                                    <i class="fas fa-check-circle benefit-icon"></i>
-                                    <span>Fixed rates locked at booking; no volatility</span>
-                                </li>
-                                <li class="benefit-item">
-                                    <i class="fas fa-check-circle benefit-icon"></i>
-                                    <span>Premature withdrawal options with minor penalty</span>
-                                </li>
-                                <li class="benefit-item">
-                                    <i class="fas fa-check-circle benefit-icon"></i>
-                                    <span>Tax-saver FDs qualify for ₹1.5L deduction u/s 80C</span>
-                                </li>
-                                <li class="benefit-item">
-                                    <i class="fas fa-check-circle benefit-icon"></i>
-                                    <span>Laddering strategy for liquidity across maturities</span>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="steps-section">
-                            <h5 class="steps-title">How to Start (3 Simple Steps):</h5>
-                            <ol class="steps-list">
-                                <li>Select bank, amount (min ₹10,000), and tenure</li>
-                                <li>Submit KYC and e-mandate</li>
-                                <li>Receive FD certificate digitally</li>
-                            </ol>
-                        </div>
-                        <div class="faq-section">
-                            <details class="faq-details">
-                                <summary class="faq-summary">
-                                    <i class="fas fa-chevron-right" style="font-size: 0.8rem;"></i>
-                                    View FAQs
-                                </summary>
-                                <div class="faq-content">
-                                    <p><strong>Interest taxable?</strong> Yes, but 5-year tax-saver defers it.</p>
-                                    <p><strong>Renewal auto?</strong> Yes, at prevailing rates.</p>
-                                    <p><strong>Inflation beat?</strong> Best for short-term safety.</p>
-                                </div>
-                            </details>
-                        </div>
-                        
-                    </div>
+                    <h3 class="card-title">Fixed Deposits</h3>
+                    <p class="card-subtitle">Lock in Guaranteed 7-8.5% Returns – No Market Risk!</p>
                 </div>
-
-                <!-- Bonds & Debentures Card -->
-                <div class="product-card">
-                    <div class="card-header purple">
-                        <div class="card-icon">
-                            <i class="fas fa-certificate"></i>
-                        </div>
-                        <h3 class="card-title">Bonds & Debentures</h3>
-                        <p class="card-subtitle">High-Yield Fixed Income – Earn 7-9% Tax-Free!</p>
+                <div class="card-body">
+                    <div class="highlight-box amber">
+                        Earn predictable interest on your savings with FDs from SBI, HDFC Bank, Bajaj Finance. Senior citizen rates up to 0.5% extra.
                     </div>
-                    <div class="card-body">
-                        <div class="highlight-box purple">
-                            Tax-free infra bonds yield 5.5-6.5% effective post-tax; taxable ones up to 9% for AAA-rated debentures.
-                        </div>
-                        <p class="card-description">
-                            Invest in government securities, corporate bonds, and NCDs from RBI, NHAI, or blue-chip firms like REC, PFC. Regular coupons, capital preservation, and secondary market liquidity make them perfect for balanced portfolios.
-                        </p>
-                        <div class="benefits-section">
-                            <h5 class="benefits-title">Key Benefits:</h5>
-                            <ul class="benefits-list">
-                                <li class="benefit-item">
-                                    <i class="fas fa-check-circle benefit-icon"></i>
-                                    <span>Higher yields than FDs; some tax-exempt</span>
-                                </li>
-                                <li class="benefit-item">
-                                    <i class="fas fa-check-circle benefit-icon"></i>
-                                    <span>Sovereign guarantee on G-Secs; low default risk</span>
-                                </li>
-                                <li class="benefit-item">
-                                    <i class="fas fa-check-circle benefit-icon"></i>
-                                    <span>Tradable on NSE/BSE for flexibility</span>
-                                </li>
-                                <li class="benefit-item">
-                                    <i class="fas fa-check-circle benefit-icon"></i>
-                                    <span>Diversify with perpetual or callable bonds</span>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="steps-section">
-                            <h5 class="steps-title">How to Buy (3 Simple Steps):</h5>
-                            <ol class="steps-list">
-                                <li>Pick rating (AAA/AA) and yield via our screener</li>
-                                <li>Demat account setup if needed</li>
-                                <li>Place order through our platform</li>
-                            </ol>
-                        </div>
-                        <div class="faq-section">
-                            <details class="faq-details">
-                                <summary class="faq-summary">
-                                    <i class="fas fa-chevron-right" style="font-size: 0.8rem;"></i>
-                                    View FAQs
-                                </summary>
-                                <div class="faq-content">
-                                    <p><strong>Minimum lot?</strong> ₹10,000-₹1 Lakh.</p>
-                                    <p><strong>Liquidity?</strong> Sell anytime on exchanges.</p>
-                                    <p><strong>Credit risk?</strong> Mitigated by ratings.</p>
-                                </div>
-                            </details>
-                        </div>
-                        
+                    <p class="card-description">
+                        Choose tenures from 7 days to 10 years, with quarterly/monthly payouts. Principal protected up to ₹5 Lakh per bank via DICGC; ideal for emergency funds or steady income.
+                    </p>
+                    <div class="benefits-section">
+                        <h5 class="benefits-title">Key Benefits:</h5>
+                        <ul class="benefits-list">
+                            <li class="benefit-item">
+                                <i class="fas fa-check-circle benefit-icon"></i>
+                                <span>Fixed rates locked at booking; no volatility</span>
+                            </li>
+                            <li class="benefit-item">
+                                <i class="fas fa-check-circle benefit-icon"></i>
+                                <span>Premature withdrawal options with minor penalty</span>
+                            </li>
+                            <li class="benefit-item">
+                                <i class="fas fa-check-circle benefit-icon"></i>
+                                <span>Tax-saver FDs qualify for ₹1.5L deduction u/s 80C</span>
+                            </li>
+                            <li class="benefit-item">
+                                <i class="fas fa-check-circle benefit-icon"></i>
+                                <span>Laddering strategy for liquidity across maturities</span>
+                            </li>
+                        </ul>
                     </div>
+                    <div class="steps-section">
+                        <h5 class="steps-title">How to Start (3 Simple Steps):</h5>
+                        <ol class="steps-list">
+                            <li>Select bank, amount (min ₹10,000), and tenure</li>
+                            <li>Submit KYC and e-mandate</li>
+                            <li>Receive FD certificate digitally</li>
+                        </ol>
+                    </div>
+                   
+                    
                 </div>
+            </div>
 
-                <!-- PMS Card -->
-                <div class="product-card">
-                    <div class="card-header pink">
-                        <div class="card-icon">
-                            <i class="fas fa-briefcase"></i>
-                        </div>
-                        <h3 class="card-title">PMS</h3>
-                        <p class="card-subtitle">Elite Portfolio Management for HNIs</p>
+            <!-- Bonds & Debentures Card -->
+            <div class="product-card">
+                <div class="card-header purple">
+                    <div class="card-icon">
+                        <i class="fas fa-certificate"></i>
                     </div>
-                    <div class="card-body">
-                        <div class="highlight-box pink">
-                            Customized Strategies Delivering 15-20%+ Alpha! For investors with ₹50 Lakh+.
-                        </div>
-                        <p class="card-description">
-                            PMS from Kotak, Motilal Oswal, or Edelweiss offers dedicated managers crafting equity portfolios based on your mandate (growth, value, momentum). Outperform benchmarks with proprietary research, concentrated bets, and tax efficiency via direct stocks.
-                        </p>
-                        <div class="benefits-section">
-                            <h5 class="benefits-title">Key Benefits:</h5>
-                            <ul class="benefits-list">
-                                <li class="benefit-item">
-                                    <i class="fas fa-check-circle benefit-icon"></i>
-                                    <span>Personalized service with relationship manager</span>
-                                </li>
-                                <li class="benefit-item">
-                                    <i class="fas fa-check-circle benefit-icon"></i>
-                                    <span>Access to unlisted opportunities and IPOs</span>
-                                </li>
-                                <li class="benefit-item">
-                                    <i class="fas fa-check-circle benefit-icon"></i>
-                                    <span>Lower fees on AUM; performance-linked incentives</span>
-                                </li>
-                                <li class="benefit-item">
-                                    <i class="fas fa-check-circle benefit-icon"></i>
-                                    <span>Superior tracking error vs. mutual funds</span>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="steps-section">
-                            <h5 class="steps-title">How to Onboard (3 Simple Steps):</h5>
-                            <ol class="steps-list">
-                                <li>Net worth verification and risk profiling</li>
-                                <li>Fund manager meeting for strategy alignment</li>
-                                <li>Transfer assets to PMS account</li>
-                            </ol>
-                        </div>
-                        <div class="faq-section">
-                            <details class="faq-details">
-                                <summary class="faq-summary">
-                                    <i class="fas fa-chevron-right" style="font-size: 0.8rem;"></i>
-                                    View FAQs
-                                </summary>
-                                <div class="faq-content">
-                                    <p><strong>Eligibility?</strong> Accredited investors ₹50L+.</p>
-                                    <p><strong>Fees?</strong> 1-2.5% management + 20% performance.</p>
-                                    <p><strong>Reporting?</strong> Monthly NAV, annual audits.</p>
-                                </div>
-                            </details>
-                        </div>
-                        
-                    </div>
+                    <h3 class="card-title">Bonds & Debentures</h3>
+                    <p class="card-subtitle">High-Yield Fixed Income – Earn 7-9% Tax-Free!</p>
                 </div>
+                <div class="card-body">
+                    <div class="highlight-box purple">
+                        Tax-free infra bonds yield 5.5-6.5% effective post-tax; taxable ones up to 9% for AAA-rated debentures.
+                    </div>
+                    <p class="card-description">
+                        Invest in government securities, corporate bonds, and NCDs from RBI, NHAI, or blue-chip firms like REC, PFC. Regular coupons, capital preservation, and secondary market liquidity.
+                    </p>
+                    <div class="benefits-section">
+                        <h5 class="benefits-title">Key Benefits:</h5>
+                        <ul class="benefits-list">
+                            <li class="benefit-item">
+                                <i class="fas fa-check-circle benefit-icon"></i>
+                                <span>Higher yields than FDs; some tax-exempt</span>
+                            </li>
+                            <li class="benefit-item">
+                                <i class="fas fa-check-circle benefit-icon"></i>
+                                <span>Sovereign guarantee on G-Secs; low default risk</span>
+                            </li>
+                            <li class="benefit-item">
+                                <i class="fas fa-check-circle benefit-icon"></i>
+                                <span>Tradable on NSE/BSE for flexibility</span>
+                            </li>
+                            <li class="benefit-item">
+                                <i class="fas fa-check-circle benefit-icon"></i>
+                                <span>Diversify with perpetual or callable bonds</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="steps-section">
+                        <h5 class="steps-title">How to Buy (3 Simple Steps):</h5>
+                        <ol class="steps-list">
+                            <li>Pick rating (AAA/AA) and yield via our screener</li>
+                            <li>Demat account setup if needed</li>
+                            <li>Place order through our platform</li>
+                        </ol>
+                    </div>
+                   
+                    
+                </div>
+            </div>
 
-                <!-- AIF Card -->
-                <div class="product-card">
-                    <div class="card-header cyan">
-                        <div class="card-icon">
-                            <i class="fas fa-rocket"></i>
-                        </div>
-                        <h3 class="card-title">AIF</h3>
-                        <p class="card-subtitle">Unlock 18-25% Returns with Alternative Investment Funds</p>
+            <!-- PMS Card -->
+            <div class="product-card">
+                <div class="card-header pink">
+                    <div class="card-icon">
+                        <i class="fas fa-briefcase"></i>
                     </div>
-                    <div class="card-body">
-                        <div class="highlight-box cyan">
-                            For Sophisticated Investors! Category I/II/III AIFs from Avendus, ICICI Prudential. Min ₹1 Cr commitment.
-                        </div>
-                        <p class="card-description">
-                            Target private equity, real estate, hedge funds, and venture capital. Diversify beyond stocks with illiquid assets offering J-curve growth. Expert teams navigate opportunities like startups or infra projects for outsized IRR.
-                        </p>
-                        <div class="benefits-section">
-                            <h5 class="benefits-title">Key Benefits:</h5>
-                            <ul class="benefits-list">
-                                <li class="benefit-item">
-                                    <i class="fas fa-check-circle benefit-icon"></i>
-                                    <span>High alpha from non-public markets</span>
-                                </li>
-                                <li class="benefit-item">
-                                    <i class="fas fa-check-circle benefit-icon"></i>
-                                    <span>Pass-through taxation; no DDT</span>
-                                </li>
-                                <li class="benefit-item">
-                                    <i class="fas fa-check-circle benefit-icon"></i>
-                                    <span>Professional due diligence and exits</span>
-                                </li>
-                                <li class="benefit-item">
-                                    <i class="fas fa-check-circle benefit-icon"></i>
-                                    <span>QE drawdowns match cash flows</span>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="steps-section">
-                            <h5 class="steps-title">How to Invest (3 Simple Steps):</h5>
-                            <ol class="steps-list">
-                                <li>Accreditation check (₹1 Cr+ net worth)</li>
-                                <li>Review PPM and PPM for vintage year</li>
-                                <li>Commit capital via agreement</li>
-                            </ol>
-                        </div>
-                        <div class="faq-section">
-                            <details class="faq-details">
-                                <summary class="faq-summary">
-                                    <i class="fas fa-chevron-right" style="font-size: 0.8rem;"></i>
-                                    View FAQs
-                                </summary>
-                                <div class="faq-content">
-                                    <p><strong>Lock-in?</strong> 3-7 years typical.</p>
-                                    <p><strong>Risks?</strong> Illiquidity, manager-dependent.</p>
-                                    <p><strong>Regulation?</strong> SEBI-registered trustees.</p>
-                                </div>
-                            </details>
-                        </div>
-                        
+                    <h3 class="card-title">PMS</h3>
+                    <p class="card-subtitle">Elite Portfolio Management for HNIs</p>
+                </div>
+                <div class="card-body">
+                    <div class="highlight-box pink">
+                        Customized Strategies Delivering 15-20%+ Alpha! For investors with ₹50 Lakh+.
                     </div>
+                    <p class="card-description">
+                        PMS from Kotak, Motilal Oswal, or Edelweiss offers dedicated managers crafting equity portfolios based on your mandate. Outperform benchmarks with proprietary research and concentrated bets.
+                    </p>
+                    <div class="benefits-section">
+                        <h5 class="benefits-title">Key Benefits:</h5>
+                        <ul class="benefits-list">
+                            <li class="benefit-item">
+                                <i class="fas fa-check-circle benefit-icon"></i>
+                                <span>Personalized service with relationship manager</span>
+                            </li>
+                            <li class="benefit-item">
+                                <i class="fas fa-check-circle benefit-icon"></i>
+                                <span>Access to unlisted opportunities and IPOs</span>
+                            </li>
+                            <li class="benefit-item">
+                                <i class="fas fa-check-circle benefit-icon"></i>
+                                <span>Lower fees on AUM; performance-linked incentives</span>
+                            </li>
+                            <li class="benefit-item">
+                                <i class="fas fa-check-circle benefit-icon"></i>
+                                <span>Superior tracking error vs. mutual funds</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="steps-section">
+                        <h5 class="steps-title">How to Onboard (3 Simple Steps):</h5>
+                        <ol class="steps-list">
+                            <li>Net worth verification and risk profiling</li>
+                            <li>Fund manager meeting for strategy alignment</li>
+                            <li>Transfer assets to PMS account</li>
+                        </ol>
+                    </div>
+                   
+                    
+                </div>
+            </div>
+
+            <!-- AIF Card -->
+            <div class="product-card">
+                <div class="card-header cyan">
+                    <div class="card-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h3 class="card-title">AIF</h3>
+                    <p class="card-subtitle">Unlock 18-25% Returns with Alternative Investment Funds</p>
+                </div>
+                <div class="card-body">
+                    <div class="highlight-box cyan">
+                        For Sophisticated Investors! Category I/II/III AIFs from Avendus, ICICI Prudential. Min ₹1 Cr commitment.
+                    </div>
+                    <p class="card-description">
+                        Target private equity, real estate, hedge funds, and venture capital. Diversify beyond stocks with illiquid assets offering J-curve growth and outsized IRR.
+                    </p>
+                    <div class="benefits-section">
+                        <h5 class="benefits-title">Key Benefits:</h5>
+                        <ul class="benefits-list">
+                            <li class="benefit-item">
+                                <i class="fas fa-check-circle benefit-icon"></i>
+                                <span>High alpha from non-public markets</span>
+                            </li>
+                            <li class="benefit-item">
+                                <i class="fas fa-check-circle benefit-icon"></i>
+                                <span>Pass-through taxation; no DDT</span>
+                            </li>
+                            <li class="benefit-item">
+                                <i class="fas fa-check-circle benefit-icon"></i>
+                                <span>Professional due diligence and exits</span>
+                            </li>
+                            <li class="benefit-item">
+                                <i class="fas fa-check-circle benefit-icon"></i>
+                                <span>QE drawdowns match cash flows</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="steps-section">
+                        <h5 class="steps-title">How to Invest (3 Simple Steps):</h5>
+                        <ol class="steps-list">
+                            <li>Accreditation check (₹1 Cr+ net worth)</li>
+                            <li>Review PPM and strategy for vintage year</li>
+                            <li>Commit capital via agreement</li>
+                        </ol>
+                    </div>
+                   
+                    </div>
+                    
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
     <!-- Footer -->
     <footer class="footer">
