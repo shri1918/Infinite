@@ -397,7 +397,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
             </p>
             <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
                 <a href="apply-for-loan.html" class="btn btn-lg" style="background: white; color: var(--primary-color); border-color: white;">Apply for Loan</a>
-                <a href="+918127090456" class="btn btn-lg btn-secondary" style="border-color: white; color: white;">Call Us Now</a>
+                <a href="tel:+918127090456" class="btn btn-lg btn-secondary" style="border-color: white; color: white;">Call Us Now</a>
             </div>
         </div>
     </section>
