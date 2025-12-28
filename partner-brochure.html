@@ -10,6 +10,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <!-- Main CSS -->
     <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="css/header-black.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/blue-colors.css">
+    <link rel="stylesheet" href="css/mobile-menu.css">
     <style>
         :root {
             --primary-color: #2563eb;
@@ -45,7 +49,7 @@
         /* Header Styles */
         .header {
             background: white;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            /* box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); */
             position: fixed;
             width: 100%;
             top: 0;
@@ -56,7 +60,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 15px 0;
+            /* padding: 15px 0; */
             max-width: 1200px;
             margin: 0 auto;
         }
@@ -76,7 +80,7 @@
             height: 50px;
             width: auto;
             border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+            /* box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3); */
             transition: all 0.3s ease;
             margin-right: 12px;
         }
@@ -341,52 +345,21 @@
 
         .brochure-image {
             width: 100%;
-            max-width: 400px;
-            height: 500px;
-            background: linear-gradient(145deg, #f8f9fa, #e9ecef);
+            max-width: 480px;
+            height: 800px;
+            background: white;
             border-radius: 12px;
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
             position: relative;
             overflow: hidden;
+            border: 1px solid #e2e8f0;
         }
 
-        .brochure-image::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
-            opacity: 0.9;
-        }
-
-        .brochure-image i {
-            font-size: 4rem;
-            color: white;
-            margin-bottom: 1rem;
-            position: relative;
-            z-index: 1;
-        }
-
-        .brochure-image h3 {
-            color: white;
-            font-size: 1.5rem;
-            font-weight: 700;
-            position: relative;
-            z-index: 1;
-            margin-bottom: 0.5rem;
-        }
-
-        .brochure-image p {
-            color: rgba(255, 255, 255, 0.9);
-            position: relative;
-            z-index: 1;
-            padding: 0 1rem;
+        .brochure-iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            border-radius: 12px;
         }
 
         .brochure-content h2 {
@@ -596,6 +569,11 @@
                 gap: 2rem;
             }
 
+            .brochure-image {
+                max-width: 100%;
+                height: 400px;
+            }
+
             .download-options {
                 flex-direction: column;
                 align-items: center;
@@ -614,10 +592,10 @@
             <nav class="navbar">
                 <!-- Logo -->
                 <div class="nav-logo">
-                    <a href="index.html" class="logo-link">
-                        <img src="images/icm-logo-golden-lion.jpg" alt="Infinite Capital Management" class="logo-img">
-                        <span class="logo-text">ICM</span>
-                    </a>
+                    <!-- <a href="index.html" class="logo-link"> -->
+                        <img src="logonew.png" alt="ICM Logo" class="logo-img">
+                        <!-- <span class="logo-text">ICM</span> -->
+                    <!-- </a> -->
                 </div>
                 
                 <!-- Navigation links in the middle -->
@@ -672,7 +650,7 @@
                             </div>
                         </li>
                         <li><a href="free-credit-score.html">Free Credit Score</a></li>
-                        <li><a href="partner-with-us.html">Partner with Us</a></li>
+                        <li><a href="partner-with-us.html" class="active">Partner with Us</a></li>
                         <li><a href="blog.html">Blog</a></li>
                     </ul>
                 </div>
@@ -689,7 +667,6 @@
             </nav>
         </div>
     </header>
-
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-bg"></div>
@@ -722,9 +699,12 @@
                 <div class="brochure-grid">
                     <div class="brochure-mockup">
                         <div class="brochure-image">
-                            <i class="fas fa-file-pdf"></i>
-                            <h3>Partnership Brochure</h3>
-                            <p>Complete guide to partnership opportunities</p>
+                            <iframe 
+                                src="https://docs.google.com/document/d/1s3AM9Ny-sdseg7GFyioRnrTLG1I4hqT1/preview" 
+                                frameborder="0" 
+                                allowfullscreen
+                                class="brochure-iframe">
+                            </iframe>
                         </div>
                     </div>
                     
@@ -752,15 +732,15 @@
                     <p>Get instant access to our partnership brochure and start your journey to financial success today!</p>
                     
                     <div class="download-options">
-                        <a href="#" class="download-btn" onclick="downloadBrochure('pdf')">
+                        <a href="https://docs.google.com/document/d/1s3AM9Ny-sdseg7GFyioRnrTLG1I4hqT1/export?format=pdf" class="download-btn" onclick="downloadBrochure('pdf'); return false;">
                             <i class="fas fa-file-pdf"></i>
                             Download PDF
                         </a>
-                        <a href="#" class="download-btn" onclick="downloadBrochure('doc')">
+                        <a href="https://docs.google.com/document/d/1s3AM9Ny-sdseg7GFyioRnrTLG1I4hqT1/export?format=docx" class="download-btn" onclick="downloadBrochure('doc'); return false;">
                             <i class="fas fa-file-word"></i>
                             Download DOC
                         </a>
-                        <a href="#" class="download-btn" onclick="viewOnline()">
+                        <a href="https://docs.google.com/document/d/1s3AM9Ny-sdseg7GFyioRnrTLG1I4hqT1/edit?usp=sharing&ouid=106776133770798984285&rtpof=true&sd=true" class="download-btn" onclick="viewOnline(); return false;" target="_blank">
                             <i class="fas fa-eye"></i>
                             View Online
                         </a>
@@ -844,65 +824,117 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
+            <div class="footer-grid">
+                <!-- About Section -->
+                <div class="footer-about">
                     <div class="footer-logo">
-                        <img src="images/icm-logo-golden-lion.jpg" alt="ICM Logo" class="logo-img" style="height: 40px; width: auto; margin-right: 10px; vertical-align: middle;">
-                        <h3 style="display: inline; vertical-align: middle; margin: 0;">ICM</h3>
+                        <img src="logonew.png" alt="ICM Logo">
+                        <div>
+                            <span style="font-size: 28px; font-weight: 800; background: linear-gradient(45deg, #ffd700, #ffed4e); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; text-shadow: 0 2px 4px rgba(0,0,0,0.1); display: block; line-height: 1;">ICM</span>
+                            <span style="font-size: 14px; color: #94a3b8; font-weight: 500; letter-spacing: 1px;">Infinite Capital</span>
+                        </div>
                     </div>
-                    <p style="color: rgba(255, 255, 255, 0.8); margin-bottom: 1rem; margin-top: 10px;">Your trusted financial partner for all loan requirements. Fast, reliable, and customer-focused lending solutions.</p>
-                    <div style="display: flex; gap: 1rem;">
-                        <a href="#" style="color: #ffd700; font-size: 1.5rem;"><i class="fab fa-facebook"></i></a>
-                        <a href="#" style="color: #ffd700; font-size: 1.5rem;"><i class="fab fa-twitter"></i></a>
-                        <a href="#" style="color: #ffd700; font-size: 1.5rem;"><i class="fab fa-linkedin"></i></a>
-                        <a href="#" style="color: #ffd700; font-size: 1.5rem;"><i class="fab fa-instagram"></i></a>
+                    <p>Your trusted partner for all your financial needs. We provide transparent and hassle-free loan solutions with competitive rates and quick approvals.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" aria-label="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
                     </div>
                 </div>
-                
-                <div class="footer-section">
-                    <h3>Quick Links</h3>
+                <!-- Quick Links Section -->
+                <div class="footer-links">
+                    <h3>
+                        Quick Links
+                        <span></span>
+                    </h3>
                     <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="loan-products.html">Services</a></li>
-                        <li><a href="#about">About Us</a></li>
-                        <li><a href="partner-with-us.html">Partner with Us</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                        <li><a href="apply-for-loan.html">Apply Now</a></li>
+                        <li>
+                            <a href="index.html">
+                                <i class="fas fa-chevron-right"></i>
+                                <span>Home</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="personal-loan.html">
+                                <i class="fas fa-chevron-right"></i>
+                                <span>Personal Loan</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="business-loan.html">
+                                <i class="fas fa-chevron-right"></i>
+                                <span>Business Loan</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="home-loan.html">
+                                <i class="fas fa-chevron-right"></i>
+                                <span>Home Loan</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="vehicle-loan.html">
+                                <i class="fas fa-chevron-right"></i>
+                                <span>Vehicle Loan</span>
+                            </a>
+                        </li>
                     </ul>
                 </div>
-                
-                <div class="footer-section">
-                    <h3>Partnership</h3>
-                    <ul>
-                        <li><a href="partner-with-us.html">Become a Partner</a></li>
-                        <li><a href="partner-brochure.html">Download Brochure</a></li>
-                        <li><a href="#training">Training Programs</a></li>
-                        <li><a href="#support">Partner Support</a></li>
-                        <li><a href="#commission">Commission Structure</a></li>
-                    </ul>
+
+                <!-- Contact Section -->
+                <div class="footer-contact">
+                    <h3>
+                        Contact Us
+                        <span></span>
+                    </h3>
+                    <div>
+                        <!-- <div class="icon-wrapper"> -->
+                            <i class="fas fa-map-marker-alt"></i>
+                        <!-- </div> -->
+                        <p>Lane No.6 Rajput dairy matiala Road Nearest Metro Nawada, New Delhi, Bharat, 110059</p>
+                    </div>
+                    <div>
+                        <!-- <div class="icon-wrapper"> -->
+                            <i class="fas fa-phone-alt"></i>
+                        <!-- </div> -->
+                        <div class="contact-info">
+                            <p>+9181270 90456</p>
+                            <p>Mon-Sat: 9:00 AM - 7:00 PM</p>
+                        </div>
+                    </div>
+                    <div>
+                        <!-- <div class="icon-wrapper"> -->
+                            <i class="fas fa-envelope"></i>
+                        <!-- </div> -->
+                        <div class="contact-info">
+                            <p>info@infinitecapmanagement.com</p>
+                            <p>We'll respond within 24 hours</p>
+                        </div>
+                    </div>
                 </div>
-                
-                <div class="footer-section">
-                    <h3>Contact Info</h3>
-                    <ul style="list-style: none;">
-                        <li style="margin-bottom: 0.5rem; color: rgba(255, 255, 255, 0.8);">
-                            <i class="fas fa-phone" style="margin-right: 0.5rem; color: #ffd700;"></i>
-                            +91 9876543210
-                        </li>
-                        <li style="margin-bottom: 0.5rem; color: rgba(255, 255, 255, 0.8);">
-                            <i class="fas fa-envelope" style="margin-right: 0.5rem; color: #ffd700;"></i>
-                            partners@infinitecapital.com
-                        </li>
-                        <li style="color: rgba(255, 255, 255, 0.8);">
-                            <i class="fas fa-map-marker-alt" style="margin-right: 0.5rem; color: #ffd700;"></i>
-                            Mumbai, Maharashtra, India
-                        </li>
-                    </ul>
+
+                <!-- Newsletter Section -->
+             
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Infinite Capital Management. All Rights Reserved.</p>
+                <div class="footer-legal">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Use</a>
+                    <a href="#">Disclaimer</a>
                 </div>
             </div>
-            
-            <div class="footer-bottom">
-                <p>&copy; 2024 Infinite Capital Management. All rights reserved. | Privacy Policy | Terms & Conditions</p>
+            <div class="footer-disclaimer">
+                <p>ICM is a registered with all NBFC and bank . All loans at the sole discretion of the lender. Terms and conditions apply.</p>
             </div>
         </div>
     </footer>
@@ -920,27 +952,40 @@
     </div>
 
     <script>
+        const brochureDocId = '1s3AM9Ny-sdseg7GFyioRnrTLG1I4hqT1';
+        const brochureViewUrl = 'https://docs.google.com/document/d/1s3AM9Ny-sdseg7GFyioRnrTLG1I4hqT1/edit?usp=sharing&ouid=106776133770798984285&rtpof=true&sd=true';
+        
         function downloadBrochure(format) {
             // Show download modal
             document.getElementById('downloadModal').style.display = 'flex';
             
+            // Create download URL based on format
+            let downloadUrl;
+            let fileExtension;
+            
+            if (format === 'pdf') {
+                downloadUrl = `https://docs.google.com/document/d/${brochureDocId}/export?format=pdf`;
+                fileExtension = 'pdf';
+            } else if (format === 'doc') {
+                downloadUrl = `https://docs.google.com/document/d/${brochureDocId}/export?format=docx`;
+                fileExtension = 'docx';
+            }
+            
             // Create and trigger download
             const link = document.createElement('a');
-            link.href = '#'; // In a real implementation, this would be the actual file path
-            link.download = `Infinite_Capital_Partnership_Brochure.${format}`;
+            link.href = downloadUrl;
+            link.download = `Infinite_Capital_Partnership_Brochure.${fileExtension}`;
+            link.target = '_blank';
             
-            // Simulate download
+            // Trigger download
             setTimeout(() => {
-                console.log(`Downloading partnership brochure as ${format.toUpperCase()}`);
-                // In a real implementation, you would set the actual file URL here
-                // link.click();
+                link.click();
             }, 500);
         }
         
         function viewOnline() {
-            // In a real implementation, this would open the brochure in a new tab
-            window.open('#', '_blank');
-            document.getElementById('downloadModal').style.display = 'flex';
+            // Open the Google Docs link in a new tab
+            window.open(brochureViewUrl, '_blank');
         }
         
         function closeModal() {
@@ -968,6 +1013,1649 @@
             });
         });
     </script>
+        <script>
+            // Mobile dropdown functionality and Legal Advisory Slider
+            document.addEventListener('DOMContentLoaded', function() {
+                // Mobile dropdown functionality
+                const dropdownToggle = document.querySelector('.dropdown-toggle');
+                const navDropdown = document.querySelector('.nav-dropdown');
+                
+                if (dropdownToggle && navDropdown) {
+                    dropdownToggle.addEventListener('click', function(e) {
+                        if (window.innerWidth <= 768) {
+                            e.preventDefault();
+                            navDropdown.classList.toggle('mobile-open');
+                        }
+                    });
+                }
+                
+                // Legal Advisory Slider
+                class LegalSlider {
+                    constructor() {
+                        this.slider = document.querySelector('.legal-slider');
+                        this.slides = document.querySelectorAll('.legal-slide');
+                        this.dots = document.querySelectorAll('.legal-dot');
+                        this.prevBtn = document.querySelector('.prev-legal');
+                        this.nextBtn = document.querySelector('.next-legal');
+                        this.currentSlide = 0;
+                        this.autoSlideInterval = null;
+                        this.autoSlideDelay = 6000; // 6 seconds for legal slides
+                        
+                        if (this.slides.length > 0) {
+                            this.init();
+                        }
+                    }
+                    
+                    init() {
+                        // Show first slide
+                        this.showSlide(0);
+                        
+                        // Add event listeners
+                        if (this.prevBtn) {
+                            this.prevBtn.addEventListener('click', () => this.prevSlide());
+                        }
+                        if (this.nextBtn) {
+                            this.nextBtn.addEventListener('click', () => this.nextSlide());
+                        }
+                        
+                        // Add dot navigation
+                        this.dots.forEach((dot, index) => {
+                            dot.addEventListener('click', () => this.goToSlide(index));
+                        });
+                        
+                        // Auto slide functionality
+                        this.startAutoSlide();
+                        
+                        // Pause on hover
+                        const container = document.querySelector('.legal-slider-container');
+                        if (container) {
+                            container.addEventListener('mouseenter', () => this.stopAutoSlide());
+                            container.addEventListener('mouseleave', () => this.startAutoSlide());
+                        }
+                        
+                        // Touch support for mobile
+                        this.addTouchSupport();
+                        
+                        // Pause when page is not visible
+                        document.addEventListener('visibilitychange', () => {
+                            if (document.hidden) {
+                                this.stopAutoSlide();
+                            } else {
+                                this.startAutoSlide();
+                            }
+                        });
+                    }
+                    
+                    showSlide(index) {
+                        // Remove active class from all slides and dots
+                        this.slides.forEach(slide => slide.classList.remove('active'));
+                        this.dots.forEach(dot => dot.classList.remove('active'));
+                        
+                        // Add active class to current slide and dot
+                        if (this.slides[index]) {
+                            this.slides[index].classList.add('active');
+                        }
+                        if (this.dots[index]) {
+                            this.dots[index].classList.add('active');
+                        }
+                        
+                        // Update slider transform
+                        if (this.slider) {
+                            this.slider.style.transform = `translateX(-${index * 100}%)`;
+                        }
+                        
+                        this.currentSlide = index;
+                    }
+                    
+                    nextSlide() {
+                        const nextIndex = (this.currentSlide + 1) % this.slides.length;
+                        this.showSlide(nextIndex);
+                        this.resetAutoSlide();
+                    }
+                    
+                    prevSlide() {
+                        const prevIndex = (this.currentSlide - 1 + this.slides.length) % this.slides.length;
+                        this.showSlide(prevIndex);
+                        this.resetAutoSlide();
+                    }
+                    
+                    goToSlide(index) {
+                        this.showSlide(index);
+                        this.resetAutoSlide();
+                    }
+                    
+                    startAutoSlide() {
+                        this.stopAutoSlide();
+                        this.autoSlideInterval = setInterval(() => {
+                            this.nextSlide();
+                        }, this.autoSlideDelay);
+                    }
+                    
+                    stopAutoSlide() {
+                        if (this.autoSlideInterval) {
+                            clearInterval(this.autoSlideInterval);
+                            this.autoSlideInterval = null;
+                        }
+                    }
+                    
+                    resetAutoSlide() {
+                        this.stopAutoSlide();
+                        this.startAutoSlide();
+                    }
+                    
+                    addTouchSupport() {
+                        let startX = 0;
+                        let endX = 0;
+                        const container = document.querySelector('.legal-slider-container');
+                        
+                        if (!container) return;
+                        
+                        container.addEventListener('touchstart', (e) => {
+                            startX = e.changedTouches[0].screenX;
+                            this.stopAutoSlide();
+                        }, { passive: true });
+                        
+                        container.addEventListener('touchend', (e) => {
+                            endX = e.changedTouches[0].screenX;
+                            this.handleSwipe();
+                            this.startAutoSlide();
+                        }, { passive: true });
+                    }
+                    
+                    handleSwipe() {
+                        const difference = startX - endX;
+                        const minSwipeDistance = 50;
+                        
+                        if (Math.abs(difference) > minSwipeDistance) {
+                            if (difference > 0) {
+                                this.nextSlide();
+                            } else {
+                                this.prevSlide();
+                            }
+                        }
+                    }
+                }
+                
+                // Initialize Legal Slider
+                new LegalSlider();
+                
+                // Wealth Advisory Slider
+                class WealthSlider {
+                    constructor() {
+                        this.slider = document.querySelector('.wealth-slider');
+                        this.slides = document.querySelectorAll('.wealth-slide');
+                        this.dots = document.querySelectorAll('.wealth-dot');
+                        this.prevBtn = document.querySelector('.prev-wealth');
+                        this.nextBtn = document.querySelector('.next-wealth');
+                        this.currentSlide = 0;
+                        this.autoSlideInterval = null;
+                        this.autoSlideDelay = 7000; // 7 seconds for wealth slides
+                        
+                        if (this.slides.length > 0) {
+                            this.init();
+                        }
+                    }
+                    
+                    init() {
+                        // Show first slide
+                        this.showSlide(0);
+                        
+                        // Add event listeners
+                        if (this.prevBtn) {
+                            this.prevBtn.addEventListener('click', () => this.prevSlide());
+                        }
+                        if (this.nextBtn) {
+                            this.nextBtn.addEventListener('click', () => this.nextSlide());
+                        }
+                        
+                        // Add dot navigation
+                        this.dots.forEach((dot, index) => {
+                            dot.addEventListener('click', () => this.goToSlide(index));
+                        });
+                        
+                        // Auto slide functionality
+                        this.startAutoSlide();
+                        
+                        // Pause on hover
+                        const container = document.querySelector('.wealth-slider-container');
+                        if (container) {
+                            container.addEventListener('mouseenter', () => this.stopAutoSlide());
+                            container.addEventListener('mouseleave', () => this.startAutoSlide());
+                        }
+                        
+                        // Touch support for mobile
+                        this.addTouchSupport();
+                        
+                        // Pause when page is not visible
+                        document.addEventListener('visibilitychange', () => {
+                            if (document.hidden) {
+                                this.stopAutoSlide();
+                            } else {
+                                this.startAutoSlide();
+                            }
+                        });
+                    }
+                    
+                    showSlide(index) {
+                        // Remove active class from all slides and dots
+                        this.slides.forEach(slide => slide.classList.remove('active'));
+                        this.dots.forEach(dot => dot.classList.remove('active'));
+                        
+                        // Add active class to current slide and dot
+                        if (this.slides[index]) {
+                            this.slides[index].classList.add('active');
+                        }
+                        if (this.dots[index]) {
+                            this.dots[index].classList.add('active');
+                        }
+                        
+                        // Update slider transform
+                        if (this.slider) {
+                            this.slider.style.transform = `translateX(-${index * 100}%)`;
+                        }
+                        
+                        this.currentSlide = index;
+                    }
+                    
+                    nextSlide() {
+                        const nextIndex = (this.currentSlide + 1) % this.slides.length;
+                        this.showSlide(nextIndex);
+                        this.resetAutoSlide();
+                    }
+                    
+                    prevSlide() {
+                        const prevIndex = (this.currentSlide - 1 + this.slides.length) % this.slides.length;
+                        this.showSlide(prevIndex);
+                        this.resetAutoSlide();
+                    }
+                    
+                    goToSlide(index) {
+                        this.showSlide(index);
+                        this.resetAutoSlide();
+                    }
+                    
+                    startAutoSlide() {
+                        this.stopAutoSlide();
+                        this.autoSlideInterval = setInterval(() => {
+                            this.nextSlide();
+                        }, this.autoSlideDelay);
+                    }
+                    
+                    stopAutoSlide() {
+                        if (this.autoSlideInterval) {
+                            clearInterval(this.autoSlideInterval);
+                            this.autoSlideInterval = null;
+                        }
+                    }
+                    
+                    resetAutoSlide() {
+                        this.stopAutoSlide();
+                        this.startAutoSlide();
+                    }
+                    
+                    addTouchSupport() {
+                        let startX = 0;
+                        let endX = 0;
+                        const container = document.querySelector('.wealth-slider-container');
+                        
+                        if (!container) return;
+                        
+                        container.addEventListener('touchstart', (e) => {
+                            startX = e.changedTouches[0].screenX;
+                            this.stopAutoSlide();
+                        }, { passive: true });
+                        
+                        container.addEventListener('touchend', (e) => {
+                            endX = e.changedTouches[0].screenX;
+                            this.handleSwipe();
+                            this.startAutoSlide();
+                        }, { passive: true });
+                    }
+                    
+                    handleSwipe() {
+                        const difference = startX - endX;
+                        const minSwipeDistance = 50;
+                        
+                        if (Math.abs(difference) > minSwipeDistance) {
+                            if (difference > 0) {
+                                this.nextSlide();
+                            } else {
+                                this.prevSlide();
+                            }
+                        }
+                    }
+                }
+                
+                // Initialize Wealth Slider
+                new WealthSlider();
+            });
+            </script>
+                <style>
+                    /* Loan Products Slider Styles */
+                    .loan-products-slider {
+                        padding: 80px 0;
+                        background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+                    }
+                    
+                    .loan-slider-container {
+                        position: relative;
+                        max-width: 1200px;
+                        margin: 0 auto;
+                        overflow: hidden;
+                        border-radius: 20px;
+                        box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+                    }
+                    
+                    .loan-slider {
+                        display: flex;
+                        transition: transform 0.5s ease-in-out;
+                    }
+                    
+                    .loan-slide {
+                        min-width: 100%;
+                        position: relative;
+                        height: 600px;
+                        display: flex;
+                        align-items: center;
+                    }
+                    
+                    .loan-slide-bg {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        background-size: cover;
+                        background-position: center;
+                        background-repeat: no-repeat;
+                    }
+                    
+                    .loan-slide-overlay {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        background: linear-gradient(135deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.4) 100%);
+                    }
+                    
+                    .loan-slide-content {
+                        position: relative;
+                        z-index: 2;
+                        color: white;
+                        padding: 60px;
+                        max-width: 600px;
+                    }
+                    
+                    .loan-badge {
+                        display: inline-block;
+                        background: linear-gradient(45deg, #ff6b6b, #ee5a52);
+                        color: white;
+                        padding: 8px 16px;
+                        border-radius: 20px;
+                        font-size: 12px;
+                        font-weight: 600;
+                        text-transform: uppercase;
+                        margin-bottom: 20px;
+                        box-shadow: 0 4px 15px rgba(238, 90, 82, 0.3);
+                    }
+                    
+                    .loan-slide h3 {
+                        font-size: 2.5rem;
+                        font-weight: 700;
+                        margin-bottom: 20px;
+                        text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+                    }
+                    
+                    .loan-details {
+                        display: flex;
+                        gap: 30px;
+                        margin: 20px 0;
+                        flex-wrap: wrap;
+                    }
+                    
+                    .loan-amount, .loan-rate, .loan-tenure {
+                        background: rgba(255,255,255,0.2);
+                        padding: 10px 15px;
+                        border-radius: 8px;
+                        backdrop-filter: blur(10px);
+                        border: 1px solid rgba(255,255,255,0.3);
+                        font-weight: 600;
+                    }
+                    
+                    .loan-features {
+                        display: flex;
+                        gap: 10px;
+                        margin: 20px 0;
+                        flex-wrap: wrap;
+                    }
+                    
+                    .feature-tag {
+                        background: rgba(40, 167, 69, 0.9);
+                        color: white;
+                        padding: 6px 12px;
+                        border-radius: 15px;
+                        font-size: 12px;
+                        font-weight: 500;
+                    }
+                    
+                    .document-requirements {
+                        margin: 25px 0;
+                    }
+                    
+                    .document-requirements h4 {
+                        font-size: 1.1rem;
+                        margin-bottom: 10px;
+                        color: #ffd700;
+                    }
+                    
+                    .document-requirements ul {
+                        list-style: none;
+                        padding: 0;
+                    }
+                    
+                    .document-requirements li {
+                        padding: 3px 0;
+                        font-size: 14px;
+                        opacity: 0.9;
+                    }
+                    
+                    .document-requirements li::before {
+                        content: "\2022";
+                        color: #ffd700;
+                        margin-right: 8px;
+                    }
+                    
+                    /* Legal Advisory Slider Styles */
+                    .legal-slider-container {
+                        position: relative;
+                        max-width: 1200px;
+                        margin: 0 auto;
+                        overflow: hidden;
+                        border-radius: 15px;
+                        box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+                    }
+                    
+                    .legal-slider {
+                        display: flex;
+                        transition: transform 0.5s ease-in-out;
+                    }
+                    
+                    .legal-slide {
+                        min-width: 100%;
+                        position: relative;
+                        height: 500px;
+                        display: flex;
+                        align-items: center;
+                    }
+                    
+                    .legal-slide-bg {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        background-size: cover;
+                        background-position: center;
+                    }
+                    
+                    .legal-slide-overlay {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        background: linear-gradient(135deg, rgba(13, 110, 253, 0.8) 0%, rgba(108, 117, 125, 0.8) 100%);
+                    }
+                    
+                    .legal-slide-content {
+                        position: relative;
+                        z-index: 2;
+                        color: white;
+                        padding: 50px;
+                        max-width: 500px;
+                    }
+                    
+                    .service-badge {
+                        background: linear-gradient(45deg, #28a745, #20c997);
+                        color: white;
+                        padding: 6px 12px;
+                        border-radius: 15px;
+                        font-size: 11px;
+                        font-weight: 600;
+                        text-transform: uppercase;
+                        margin-bottom: 15px;
+                        display: inline-block;
+                    }
+                    
+                    .service-icon {
+                        font-size: 3rem;
+                        color: #ffd700;
+                        margin-bottom: 20px;
+                    }
+                    
+                    .legal-slide h3 {
+                        font-size: 2.2rem;
+                        font-weight: 700;
+                        margin-bottom: 15px;
+                    }
+                    
+                    .service-description {
+                        font-size: 16px;
+                        line-height: 1.6;
+                        margin-bottom: 20px;
+                        opacity: 0.9;
+                    }
+                    
+                    .service-features {
+                        margin: 20px 0;
+                    }
+                    
+                    .feature-item {
+                        display: flex;
+                        align-items: center;
+                        margin-bottom: 8px;
+                        font-size: 14px;
+                    }
+                    
+                    .feature-item i {
+                        color: #28a745;
+                        margin-right: 10px;
+                        font-size: 16px;
+                    }
+                    
+                    .pricing-info {
+                        margin: 25px 0;
+                    }
+                    
+                    .price-tag {
+                        display: flex;
+                        align-items: baseline;
+                        gap: 8px;
+                        margin-bottom: 10px;
+                    }
+                    
+                    .price {
+                        font-size: 2rem;
+                        font-weight: 700;
+                        color: #ffd700;
+                    }
+                    
+                    .tax {
+                        font-size: 14px;
+                        opacity: 0.8;
+                    }
+                    
+                    .old-price {
+                        font-size: 1.2rem;
+                        text-decoration: line-through;
+                        opacity: 0.6;
+                        margin-right: 10px;
+                    }
+                    
+                    .pricing-plans {
+                        display: grid;
+                        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+                        gap: 15px;
+                        margin: 20px 0;
+                    }
+                    
+                    .plan {
+                        background: rgba(255,255,255,0.1);
+                        padding: 15px;
+                        border-radius: 10px;
+                        text-align: center;
+                        border: 1px solid rgba(255,255,255,0.2);
+                        position: relative;
+                    }
+                    
+                    .plan.featured {
+                        background: rgba(255,215,0,0.2);
+                        border-color: #ffd700;
+                    }
+                    
+                    .plan-type {
+                        display: block;
+                        font-size: 12px;
+                        text-transform: uppercase;
+                        margin-bottom: 5px;
+                        opacity: 0.8;
+                    }
+                    
+                    .plan-price {
+                        display: block;
+                        font-weight: 700;
+                        font-size: 16px;
+                    }
+                    
+                    .save-badge {
+                        background: linear-gradient(45deg, #ff4757, #ff3838);
+                        color: white;
+                        font-size: 11px;
+                        padding: 4px 8px;
+                        border-radius: 12px;
+                        font-weight: 700;
+                        margin-left: 10px;
+                        box-shadow: 0 2px 8px rgba(255, 71, 87, 0.4);
+                        animation: pulse 2s infinite;
+                        text-transform: uppercase;
+                        letter-spacing: 0.5px;
+                    }
+                    
+                    @keyframes pulse {
+                        0% { transform: scale(1); }
+                        50% { transform: scale(1.05); }
+                        100% { transform: scale(1); }
+                    }
+                    
+                    .bonus-features {
+                        background: rgba(255, 215, 0, 0.1);
+                        border: 1px solid rgba(255, 215, 0, 0.3);
+                        border-radius: 8px;
+                        padding: 10px;
+                        margin: 15px 0;
+                        backdrop-filter: blur(5px);
+                    }
+                    
+                    .bonus-features p {
+                        margin: 0;
+                        text-align: center;
+                        animation: glow 2s ease-in-out infinite alternate;
+                    }
+                    
+                    @keyframes glow {
+                        from { text-shadow: 0 0 5px rgba(255, 215, 0, 0.5); }
+                        to { text-shadow: 0 0 20px rgba(255, 215, 0, 0.8), 0 0 30px rgba(255, 215, 0, 0.6); }
+                    }
+                    
+                    .service-badge {
+                        background: linear-gradient(45deg, #ff6b6b, #ee5a52);
+                        color: white;
+                        padding: 8px 16px;
+                        border-radius: 20px;
+                        font-size: 12px;
+                        font-weight: 700;
+                        text-transform: uppercase;
+                        margin-bottom: 20px;
+                        box-shadow: 0 4px 15px rgba(238, 90, 82, 0.4);
+                        display: inline-block;
+                        animation: bounce 3s infinite;
+                    }
+                    
+                    @keyframes bounce {
+                        0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+                        40% { transform: translateY(-5px); }
+                        60% { transform: translateY(-3px); }
+                    }
+                    
+                    /* Enhanced Priority Response Animations */
+                    @keyframes pulse-glow {
+                        0% { transform: scale(1); opacity: 0.7; }
+                        50% { transform: scale(1.2); opacity: 0.4; }
+                        100% { transform: scale(1); opacity: 0.7; }
+                    }
+                    
+                    @keyframes glow-text {
+                        from { 
+                            text-shadow: 0 0 5px rgba(255, 215, 0, 0.5), 0 0 10px rgba(255, 215, 0, 0.3);
+                            filter: brightness(1);
+                        }
+                        to { 
+                            text-shadow: 0 0 20px rgba(255, 215, 0, 0.8), 0 0 30px rgba(255, 215, 0, 0.6), 0 0 40px rgba(255, 215, 0, 0.4);
+                            filter: brightness(1.1);
+                        }
+                    }
+                    
+                    @keyframes call-pulse {
+                        0% { transform: scale(1); box-shadow: 0 4px 15px rgba(40,167,69,0.4); }
+                        50% { transform: scale(1.05); box-shadow: 0 6px 25px rgba(40,167,69,0.6); }
+                        100% { transform: scale(1); box-shadow: 0 4px 15px rgba(40,167,69,0.4); }
+                    }
+                    
+                    @keyframes ring {
+                        0%, 100% { transform: rotate(0deg); }
+                        10%, 30% { transform: rotate(-10deg); }
+                        20% { transform: rotate(10deg); }
+                    }
+                    
+                    .priority-call-btn:hover {
+                        transform: scale(1.08) !important;
+                        box-shadow: 0 8px 30px rgba(40,167,69,0.8) !important;
+                    }
+                    
+                    /* Enhanced Trust Badges Styling */
+                    .trust-badges-enhanced {
+                        background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+                        padding: 60px 0;
+                        position: relative;
+                        overflow: hidden;
+                    }
+                    
+                    .trust-badges-enhanced::before {
+                        content: '';
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        right: 0;
+                        bottom: 0;
+                        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="1" fill="%23000" opacity="0.02"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+                        opacity: 0.5;
+                    }
+                    
+                    .trust-badges-container {
+                        display: grid;
+                        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+                        gap: 30px;
+                        max-width: 1200px;
+                        margin: 0 auto;
+                        padding: 0 20px;
+                        position: relative;
+                        z-index: 2;
+                    }
+                    
+                    .trust-badge-premium {
+                        background: linear-gradient(135deg, #ffffff 0%, #f8f9ff 100%);
+                        border-radius: 20px;
+                        padding: 30px;
+                        position: relative;
+                        overflow: hidden;
+                        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+                        transition: all 0.4s ease;
+                        border: 1px solid rgba(255, 255, 255, 0.2);
+                        backdrop-filter: blur(10px);
+                    }
+                    
+                    .trust-badge-premium:hover {
+                        transform: translateY(-10px) scale(1.02);
+                        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+                    }
+                    
+                    .badge-glow {
+                        position: absolute;
+                        top: -50%;
+                        left: -50%;
+                        width: 200%;
+                        height: 200%;
+                        background: radial-gradient(circle, rgba(0, 123, 255, 0.1) 0%, transparent 70%);
+                        animation: rotate-glow 8s linear infinite;
+                        pointer-events: none;
+                    }
+                    
+                    @keyframes rotate-glow {
+                        from { transform: rotate(0deg); }
+                        to { transform: rotate(360deg); }
+                    }
+                    
+                    .badge-icon {
+                        width: 80px;
+                        height: 80px;
+                        background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+                        border-radius: 50%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        margin: 0 auto 25px;
+                        position: relative;
+                        z-index: 3;
+                        box-shadow: 0 8px 25px rgba(0, 123, 255, 0.3);
+                    }
+                    
+                    .badge-icon i {
+                        font-size: 32px;
+                        color: white;
+                    }
+                    
+                    .badge-content h4 {
+                        font-size: 1.4rem;
+                        font-weight: 700;
+                        color: #1a202c;
+                        margin-bottom: 15px;
+                        text-align: center;
+                    }
+                    
+                    .badge-content p {
+                        color: #4a5568;
+                        font-size: 14px;
+                        line-height: 1.6;
+                        text-align: center;
+                        margin-bottom: 20px;
+                    }
+                    
+                    .trust-stats {
+                        display: flex;
+                        justify-content: center;
+                        gap: 15px;
+                        flex-wrap: wrap;
+                    }
+                    
+                    .stat-item {
+                        background: linear-gradient(135deg, #e8f4fd 0%, #d6f0ff 100%);
+                        color: #0066cc;
+                        padding: 6px 12px;
+                        border-radius: 15px;
+                        font-size: 11px;
+                        font-weight: 600;
+                        border: 1px solid rgba(0, 102, 204, 0.2);
+                        white-space: nowrap;
+                    }
+                    
+                    /* Mobile Responsive */
+                    @media (max-width: 768px) {
+                        .trust-badges-container {
+                            grid-template-columns: 1fr;
+                            gap: 20px;
+                            padding: 0 15px;
+                        }
+                        
+                        .trust-badge-premium {
+                            padding: 25px;
+                        }
+                        
+                        .badge-content h4 {
+                            font-size: 1.2rem;
+                        }
+                        
+                        .priority-call-btn {
+                            font-size: 12px !important;
+                            padding: 12px 25px !important;
+                        }
+                        
+                        .countdown-timer {
+                            font-size: 2.2rem !important;
+                        }
+                        
+                        .countdown-timer span {
+                            font-size: 1.4rem !important;
+                        }
+                    }
+                    
+                    /* Enhanced Wealth Advisory Carousel Styles */
+                    .bg-gradient-wealth {
+                        background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+                        position: relative;
+                        overflow: hidden;
+                        padding: 80px 0;
+                    }
+                    
+                    .bg-gradient-wealth::before {
+                        content: '';
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        right: 0;
+                        bottom: 0;
+                        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="wealth-pattern" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="1.5" fill="%23000000" opacity="0.02"/></pattern></defs><rect width="100" height="100" fill="url(%23wealth-pattern)"/></svg>');
+                    }
+                    
+                    .wealth-tag {
+                        background: linear-gradient(45deg, #ffd700, #ffed4e);
+                        color: #1a202c;
+                        padding: 8px 20px;
+                        border-radius: 25px;
+                        font-weight: 700;
+                        font-size: 14px;
+                        text-transform: uppercase;
+                        letter-spacing: 1px;
+                        display: inline-block;
+                        box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+                        animation: wealth-glow 3s ease-in-out infinite alternate;
+                    }
+                    
+                    @keyframes wealth-glow {
+                        from { 
+                            box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+                            transform: scale(1);
+                        }
+                        to { 
+                            box-shadow: 0 6px 25px rgba(255, 215, 0, 0.5);
+                            transform: scale(1.02);
+                        }
+                    }
+                    
+                    .wealth-title {
+                        color: #1a202c;
+                        font-size: 2.8rem;
+                        font-weight: 800;
+                        text-shadow: none;
+                        margin: 20px 0;
+                    }
+                    
+                    /* Carousel slide titles remain white */
+                    .wealth-slide h3 {
+                        font-size: 2.3rem;
+                        font-weight: 800;
+                        margin-bottom: 20px;
+                        text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+                        text-align: center;
+                        color: white;
+                    }
+                    
+                    .wealth-slider-container {
+                        position: relative;
+                        max-width: 1200px;
+                        margin: 0 auto;
+                        overflow: hidden;
+                        border-radius: 20px;
+                        box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+                        backdrop-filter: blur(10px);
+                    }
+                    
+                    .wealth-slider {
+                        display: flex;
+                        transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+                    }
+                    
+                    .wealth-slide {
+                        min-width: 100%;
+                        position: relative;
+                        height: 650px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                    }
+                    
+                    .wealth-slide-bg {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        background-size: cover;
+                        background-position: center;
+                        background-repeat: no-repeat;
+                    }
+                    
+                    .wealth-slide-overlay {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        background: linear-gradient(135deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.5) 100%);
+                    }
+                    
+                    .wealth-slide-content {
+                        position: relative;
+                        z-index: 3;
+                        color: white;
+                        padding: 60px;
+                        max-width: 750px;
+                        text-align: center;
+                    }
+                    
+                    .wealth-badge {
+                        background: linear-gradient(45deg, #ff6b6b, #ffd700);
+                        color: white;
+                        padding: 8px 16px;
+                        border-radius: 20px;
+                        font-size: 12px;
+                        font-weight: 700;
+                        text-transform: uppercase;
+                        margin-bottom: 20px;
+                        display: inline-block;
+                        box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4);
+                        animation: wealth-badge-float 3s ease-in-out infinite alternate;
+                    }
+                    
+                    @keyframes wealth-badge-float {
+                        from { transform: translateY(0px); }
+                        to { transform: translateY(-3px); }
+                    }
+                    
+                    .wealth-icon {
+                        width: 80px;
+                        height: 80px;
+                        background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
+                        color: #1a202c;
+                        border-radius: 50%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        margin: 0 auto 25px auto;
+                        font-size: 35px;
+                        box-shadow: 0 8px 25px rgba(255, 215, 0, 0.4);
+                        animation: wealth-icon-pulse 2s ease-in-out infinite alternate;
+                    }
+                    
+                    @keyframes wealth-icon-pulse {
+                        from { 
+                            transform: scale(1);
+                            box-shadow: 0 8px 25px rgba(255, 215, 0, 0.4);
+                        }
+                        to { 
+                            transform: scale(1.05);
+                            box-shadow: 0 12px 35px rgba(255, 215, 0, 0.6);
+                        }
+                    }
+                    
+                    
+                    .wealth-features {
+                        margin: 25px 0;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        max-width: 580px;
+                        margin: 25px auto;
+                    }
+                    
+                    .wealth-features .feature-item {
+                        display: flex;
+                        align-items: center;
+                        margin-bottom: 12px;
+                        padding: 12px 18px;
+                        background: linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.9) 100%);
+                        border-radius: 10px;
+                        backdrop-filter: blur(10px);
+                        border: 2px solid rgba(255,215,0,0.3);
+                        transition: all 0.3s ease;
+                        width: 100%;
+                        justify-content: flex-start;
+                        box-shadow: 0 4px 15px rgba(255,255,255,0.2);
+                    }
+                    
+                    .wealth-features .feature-item:hover {
+                        background: linear-gradient(135deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0.98) 100%);
+                        transform: translateX(5px) scale(1.02);
+                        border-color: #ffd700;
+                        box-shadow: 0 6px 25px rgba(255,215,0,0.4);
+                    }
+                    
+                    .wealth-features .feature-item i {
+                        color: #28a745;
+                        margin-right: 15px;
+                        font-size: 18px;
+                        text-shadow: 0 2px 4px rgba(40,167,69,0.3);
+                    }
+                    
+                    .wealth-features .feature-item span {
+                        color: #1a202c;
+                        font-size: 15px;
+                        font-weight: 700;
+                        text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+                    }
+                    
+                    .wealth-pricing {
+                        background: rgba(255,255,255,0.1);
+                        padding: 20px;
+                        border-radius: 12px;
+                        margin: 25px auto;
+                        backdrop-filter: blur(10px);
+                        border: 1px solid rgba(255,255,255,0.2);
+                        max-width: 580px;
+                        text-align: center;
+                    }
+                    
+                    .wealth-pricing .price-tag {
+                        display: flex;
+                        align-items: baseline;
+                        gap: 10px;
+                        margin-bottom: 15px;
+                        justify-content: center;
+                    }
+                    
+                    .wealth-pricing .price {
+                        font-size: 1.8rem;
+                        font-weight: 800;
+                        color: #ffd700;
+                        text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+                    }
+                    
+                    .wealth-pricing .tax {
+                        font-size: 14px;
+                        opacity: 0.8;
+                    }
+                    
+                    .wealth-pricing .pricing-details {
+                        display: flex;
+                        justify-content: center;
+                        gap: 20px;
+                        font-size: 13px;
+                        opacity: 0.9;
+                        flex-wrap: wrap;
+                    }
+                    
+                    .btn-wealth {
+                        background: linear-gradient(45deg, #28a745, #20c997);
+                        color: white;
+                        padding: 15px 35px;
+                        border-radius: 25px;
+                        font-weight: 700;
+                        text-decoration: none;
+                        transition: all 0.3s ease;
+                        border: none;
+                        cursor: pointer;
+                        box-shadow: 0 6px 20px rgba(40,167,69,0.4);
+                        text-transform: uppercase;
+                        letter-spacing: 0.5px;
+                        font-size: 14px;
+                        display: inline-block;
+                        margin-top: 15px;
+                    }
+                    
+                    .btn-wealth:hover {
+                        transform: translateY(-3px) scale(1.05);
+                        box-shadow: 0 8px 30px rgba(40,167,69,0.6);
+                        color: white;
+                        text-decoration: none;
+                    }
+                    
+                    /* Wealth Slider Controls */
+                    .wealth-slider-control {
+                        position: absolute;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        background: linear-gradient(45deg, #ffd700, #ffed4e);
+                        border: none;
+                        width: 55px;
+                        height: 55px;
+                        border-radius: 50%;
+                        cursor: pointer;
+                        font-size: 20px;
+                        color: #1a202c;
+                        transition: all 0.3s ease;
+                        z-index: 10;
+                        box-shadow: 0 6px 20px rgba(255, 215, 0, 0.4);
+                    }
+                    
+                    .wealth-slider-control:hover {
+                        background: linear-gradient(45deg, #ffed4e, #ffd700);
+                        transform: translateY(-50%) scale(1.1);
+                        box-shadow: 0 8px 30px rgba(255, 215, 0, 0.6);
+                    }
+                    
+                    .prev-wealth {
+                        left: 25px;
+                    }
+                    
+                    .next-wealth {
+                        right: 25px;
+                    }
+                    
+                    /* Wealth Slider Dots */
+                    .wealth-slider-dots {
+                        display: none;
+                    }
+                    
+                    .wealth-dot {
+                        width: 14px;
+                        height: 14px;
+                        border-radius: 50%;
+                        background: rgba(255,255,255,0.4);
+                        cursor: pointer;
+                        transition: all 0.3s ease;
+                        border: 2px solid transparent;
+                    }
+                    
+                    .wealth-dot.active {
+                        background: linear-gradient(45deg, #ffd700, #ffed4e);
+                        transform: scale(1.3);
+                        border-color: white;
+                        box-shadow: 0 4px 15px rgba(255, 215, 0, 0.6);
+                    }
+                    
+                    .wealth-dot:hover {
+                        background: rgba(255,255,255,0.7);
+                        transform: scale(1.15);
+                    }
+                    
+                    /* Mobile Responsive for Wealth Section */
+                    @media (max-width: 768px) {
+                        .wealth-slide {
+                            height: auto;
+                            min-height: 580px;
+                        }
+                        
+                        .wealth-slide-content {
+                            padding: 35px 25px;
+                            max-width: 90%;
+                        }
+                        
+                        .wealth-title {
+                            font-size: 2.2rem;
+                        }
+                        
+                        .wealth-slide h3 {
+                            font-size: 1.8rem;
+                        }
+                        
+                        .wealth-features {
+                            max-width: 100%;
+                        }
+                        
+                        .wealth-features .feature-item {
+                            font-size: 14px;
+                            padding: 12px 15px;
+                            margin-bottom: 10px;
+                            background: linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.9) 100%);
+                        }
+                        
+                        .wealth-features .feature-item span {
+                            color: #1a202c;
+                            font-weight: 700;
+                        }
+                        
+                        .wealth-features .feature-item i {
+                            color: #28a745;
+                            font-size: 16px;
+                        }
+                        
+                        .wealth-icon {
+                            width: 70px;
+                            height: 70px;
+                            font-size: 30px;
+                        }
+                        
+                        .wealth-pricing {
+                            max-width: 100%;
+                            padding: 18px;
+                        }
+                        
+                        .wealth-slider-control {
+                            width: 45px;
+                            height: 45px;
+                            font-size: 16px;
+                        }
+                        
+                        .prev-wealth {
+                            left: 15px;
+                        }
+                        
+                        .next-wealth {
+                            right: 15px;
+                        }
+                    }
+                    
+                    /* Financial Advisory Slider Styles */
+                    .financial-slider-container {
+                        position: relative;
+                        max-width: 1200px;
+                        margin: 0 auto;
+                        overflow: hidden;
+                        border-radius: 15px;
+                        box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+                    }
+                    
+                    .financial-slider {
+                        display: flex;
+                        transition: transform 0.5s ease-in-out;
+                    }
+                    
+                    .financial-slide {
+                        min-width: 100%;
+                        position: relative;
+                        height: 500px;
+                        display: flex;
+                        align-items: center;
+                    }
+                    
+                    .financial-slide-bg {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        background-size: cover;
+                        background-position: center;
+                    }
+                    
+                    .financial-slide-overlay {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        background: linear-gradient(135deg, rgba(32, 201, 151, 0.8) 0%, rgba(13, 110, 253, 0.8) 100%);
+                    }
+                    
+                    .financial-slide-content {
+                        position: relative;
+                        z-index: 2;
+                        color: white;
+                        padding: 50px;
+                        max-width: 500px;
+                    }
+                    
+                    .service-highlights {
+                        display: grid;
+                        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+                        gap: 15px;
+                        margin: 25px 0;
+                    }
+                    
+                    .highlight-item {
+                        display: flex;
+                        align-items: center;
+                        background: rgba(255,255,255,0.1);
+                        padding: 10px 15px;
+                        border-radius: 8px;
+                        backdrop-filter: blur(5px);
+                        border: 1px solid rgba(255,255,255,0.2);
+                    }
+                    
+                    .highlight-item i {
+                        color: #ffd700;
+                        margin-right: 10px;
+                        font-size: 18px;
+                    }
+                    
+                    .highlight-item span {
+                        font-size: 14px;
+                        font-weight: 500;
+                    }
+                    
+                    /* Slider Controls - Common for all sliders */
+                    .loan-slider-control, .legal-slider-control, .financial-slider-control {
+                        position: absolute;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        background: rgba(255,255,255,0.9);
+                        border: none;
+                        width: 50px;
+                        height: 50px;
+                        border-radius: 50%;
+                        cursor: pointer;
+                        font-size: 18px;
+                        color: #333;
+                        transition: all 0.3s ease;
+                        z-index: 10;
+                        box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+                    }
+                    
+                    .loan-slider-control:hover, .legal-slider-control:hover, .financial-slider-control:hover {
+                        background: white;
+                        transform: translateY(-50%) scale(1.1);
+                        box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+                    }
+                    
+                    .prev-loan, .prev-legal, .prev-financial {
+                        left: 20px;
+                    }
+                    
+                    .next-loan, .next-legal, .next-financial {
+                        right: 20px;
+                    }
+                    
+                    /* Slider Dots - Common for all sliders */
+                    .loan-slider-dots, .legal-slider-dots, .financial-slider-dots {
+                        display: flex;
+                        justify-content: center;
+                        gap: 10px;
+                        margin-top: 30px;
+                    }
+                    
+                    .loan-dot, .legal-dot, .financial-dot {
+                        width: 12px;
+                        height: 12px;
+                        border-radius: 50%;
+                        background: rgba(255,255,255,0.4);
+                        cursor: pointer;
+                        transition: all 0.3s ease;
+                        border: 2px solid transparent;
+                    }
+                    
+                    .loan-dot.active, .legal-dot.active, .financial-dot.active {
+                        background: #007bff;
+                        transform: scale(1.2);
+                        border-color: white;
+                    }
+                    
+                    .loan-dot:hover, .legal-dot:hover, .financial-dot:hover {
+                        background: rgba(255,255,255,0.7);
+                        transform: scale(1.1);
+                    }
+                    
+                    /* Button Styles */
+                    .btn {
+                        display: inline-block;
+                        padding: 12px 30px;
+                        border-radius: 25px;
+                        text-decoration: none;
+                        font-weight: 600;
+                        font-size: 14px;
+                        text-transform: uppercase;
+                        letter-spacing: 0.5px;
+                        transition: all 0.3s ease;
+                        border: none;
+                        cursor: pointer;
+                        box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+                    }
+                    
+                    .btn-primary {
+                        background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+                        color: white;
+                    }
+                    
+                    .btn-primary:hover {
+                        transform: translateY(-2px);
+                        box-shadow: 0 6px 20px rgba(0,123,255,0.4);
+                    }
+                    
+                    /* Responsive Design */
+                    @media (max-width: 768px) {
+                        .loan-slide, .legal-slide, .financial-slide {
+                            height: auto;
+                            min-height: 500px;
+                        }
+                        
+                        .loan-slide-content, .legal-slide-content, .financial-slide-content {
+                            padding: 30px 20px;
+                        }
+                        
+                        .loan-slide h3, .legal-slide h3, .financial-slide h3 {
+                            font-size: 1.8rem;
+                        }
+                        
+                        .loan-details {
+                            flex-direction: column;
+                            gap: 10px;
+                        }
+                        
+                        .pricing-plans {
+                            grid-template-columns: 1fr;
+                        }
+                        
+                        .service-highlights {
+                            grid-template-columns: 1fr;
+                        }
+                        
+                        .loan-slider-control, .legal-slider-control, .financial-slider-control {
+                            width: 40px;
+                            height: 40px;
+                            font-size: 14px;
+                        }
+                        
+                        .prev-loan, .prev-legal, .prev-financial {
+                            left: 10px;
+                        }
+                        
+                        .next-loan, .next-legal, .next-financial {
+                            right: 10px;
+                        }
+                    }
+                    
+                    /* Enhanced Logo Styling */
+                    .nav-logo {
+                        display: flex;
+                        align-items: center;
+                    }
+                    
+                    .logo-link {
+                        display: flex;
+                        align-items: center;
+                        text-decoration: none;
+                        transition: all 0.3s ease;
+                    }
+                    
+                    .logo-link:hover {
+                        transform: scale(1.05);
+                    }
+                    
+                    .logo-img {
+                        height: 70px;
+                        width: auto;
+                        /* border-radius: 8px;
+                        box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+                        transition: all 0.3s ease;
+                        margin-right: 12px; */
+                    }
+                    
+                    .logo-img:hover {
+                        box-shadow: 0 6px 25px rgba(255, 215, 0, 0.5);
+                        transform: scale(1.02);
+                    }
+                    
+                    .logo-text {
+                        font-size: 1.5rem;
+                        font-weight: 800;
+                        background: linear-gradient(45deg, #ffd700, #ffed4e);
+                        -webkit-background-clip: text;
+                        -webkit-text-fill-color: transparent;
+                        background-clip: text;
+                        text-shadow: 0 2px 4px rgba(255, 215, 0, 0.3);
+                        letter-spacing: 1px;
+                        margin-left: 8px;
+                    }
+                    
+                    /* Mobile Logo Adjustments */
+                    @media (max-width: 768px) {
+                        .logo-img {
+                            height: 40px;
+                            margin-right: 8px;
+                        }
+                        
+                        .logo-text {
+                            font-size: 1.3rem;
+                            margin-left: 4px;
+                        }
+                    }
+                    
+                    /* Navigation Dropdown Styles */
+                    .nav-dropdown {
+                        position: relative;
+                    }
+                    
+                    .dropdown-toggle {
+                        display: flex;
+                        align-items: center;
+                        gap: 0.5rem;
+                        transition: all 0.3s ease;
+                    }
+                    
+                    .dropdown-toggle i {
+                        font-size: 0.8rem;
+                        transition: transform 0.3s ease;
+                    }
+                    
+                    .nav-dropdown:hover .dropdown-toggle i {
+                        transform: rotate(180deg);
+                    }
+                    
+                    .dropdown-menu {
+                        position: absolute;
+                        top: 100%;
+                        left: 0;
+                        background: white;
+                        min-width: 320px;
+                        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+                        border-radius: 12px;
+                        padding: 1rem 0;
+                        opacity: 0;
+                        visibility: hidden;
+                        transform: translateY(-10px);
+                        transition: all 0.3s ease;
+                        z-index: 1000;
+                        border: 1px solid rgba(0, 0, 0, 0.1);
+                    }
+                    
+                    .nav-dropdown:hover .dropdown-menu {
+                        opacity: 1;
+                        visibility: visible;
+                        transform: translateY(0);
+                    }
+                    
+                    .dropdown-item {
+                        display: flex;
+                        align-items: center;
+                        gap: 1rem;
+                        padding: 0.75rem 1.5rem;
+                        color: #333;
+                        text-decoration: none;
+                        transition: all 0.3s ease;
+                        border-left: 3px solid transparent;
+                    }
+                    
+                    .dropdown-item:hover {
+                        background: linear-gradient(135deg, #f8f9ff 0%, #e8f0ff 100%);
+                        border-left-color: #007bff;
+                        transform: translateX(3px);
+                    }
+                    
+                    .dropdown-item i {
+                        width: 24px;
+                        height: 24px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        background: linear-gradient(135deg, #007bff, #0056b3);
+                        color: white;
+                        border-radius: 50%;
+                        font-size: 0.9rem;
+                        flex-shrink: 0;
+                    }
+                    
+                    .dropdown-item div {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: flex-start;
+                    }
+                    
+                    .dropdown-item strong {
+                        font-weight: 600;
+                        font-size: 0.95rem;
+                        color: #333;
+                        margin-bottom: 0.1rem;
+                    }
+                    
+                    .dropdown-item span {
+                        font-size: 0.8rem;
+                        color: #666;
+                        font-weight: 400;
+                    }
+                    
+                    /* Mobile Dropdown Styles */
+                    @media (max-width: 768px) {
+                        .dropdown-menu {
+                            position: static;
+                            opacity: 1;
+                            visibility: visible;
+                            transform: none;
+                            box-shadow: none;
+                            border: none;
+                            padding: 0;
+                            background: transparent;
+                            display: none;
+                        }
+                        
+                        .nav-dropdown.mobile-open .dropdown-menu {
+                            display: block;
+                        }
+                        
+                        .dropdown-item {
+                            padding: 0.5rem 0;
+                            margin-left: 1rem;
+                        }
+                        
+                        .dropdown-toggle {
+                            cursor: pointer;
+                        }
+                    }
+                    
+                    /* Ensure header z-index is high enough */
+                    .header {
+                        z-index: 1001;
+                    }
+                    
+                    </style>
 </body>
 </html>
 

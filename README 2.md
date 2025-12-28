@@ -397,7 +397,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
             </p>
             <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
                 <a href="apply-for-loan.html" class="btn btn-lg" style="background: white; color: var(--primary-color); border-color: white;">Apply for Loan</a>
-                <a href="tel:+919876543210" class="btn btn-lg btn-secondary" style="border-color: white; color: white;">Call Us Now</a>
+                <a href="+918127090456" class="btn btn-lg btn-secondary" style="border-color: white; color: white;">Call Us Now</a>
             </div>
         </div>
     </section>
@@ -431,8 +431,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
                 <div class="footer-contact">
                     <h4>Contact Us</h4>
                     <p><i class="fas fa-map-marker-alt"></i> 123 Financial District, Mumbai, India</p>
-                    <p><i class="fas fa-phone"></i> +91 98765 43210</p>
-                    <p><i class="fas fa-envelope"></i> info@infinitecapital.com</p>
+                    <p><i class="fas fa-phone"></i> +9181270 90456</p>
+                    <p><i class="fas fa-envelope"></i> info@infinitecapmanagement.com</p>
                 </div>
                 <div class="footer-newsletter">
                     <h4>Newsletter</h4>
